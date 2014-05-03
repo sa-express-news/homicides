@@ -4,5 +4,25 @@
     </head>
     <body>
         <h1>San Antonio Homicides: 2007</h1>
+	<table border=1 cellpadding=7>
+		<tr>
+			<th>Name</th>
+			<th>Date</th>
+			<th>Address</th>
+			<th>Method</th>
+			<th>Age</th>
+			<th>Race</th>
+		</tr>
+    {% for obj in object_list %}		
+        <tr>
+            <td><a href="{{ obj.HomicideNbr }}/">{{ obj.enNAME }}</a></td>
+			<td>{{ obj.Date }}</td>
+			<td>{{ obj.enAddress|title }}</td>
+			<td>{{ obj.METHOD|title }}</td>
+			<td>{{ obj.enAge }}</td>
+			<td>{{ obj.Race }}</td>
+		</tr>
+	{% endfor %}
+	</table>
     </body>
 </html>
