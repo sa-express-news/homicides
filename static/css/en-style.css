@@ -6,20 +6,24 @@ body {
 	}
 	
 /*navigation*/
-.nav-container {
+nav {
 	background: #282828;
+	min-height: 50px;
 	width: 100%;
-	margin-bottom: 25px;
-	position: relative; 
+	position: relative;
 	}
 
 .nav-tophat {
-	width: 90%;
-	height: 50px;
-	margin:0 auto;
+	width: 100%;
 	font-family: Arial, sans-serif;
-	font-size: 12px;
+	font-size: 11px;
 	text-transform: uppercase;
+	display: inline;
+	}
+
+.nav-container {
+	margin-right: auto;
+	margin-left: auto; 
 	}
 
 #nav-enlogo {
@@ -28,7 +32,34 @@ body {
 	height: 50px;
 	background-repeat: no-repeat;
 	background-position: left center;
-	background-image: url(images/SAEN-Lines-Bw.png);}
+	background-image: url(images/SAEN-Lines-Bw.png);
+	margin-left: 20px;
+	margin-right: 2%;
+	padding-right: 2%;
+	float: left;
+	}
+	
+#nav-links ul {
+	display: block;
+	position: static;
+	width: auto;
+	margin-left: 0;
+	padding: 0;
+	float: left;
+	}
+
+#nav-links li {
+	list-style-type: none;
+	margin: 0;
+	padding: 16px;
+	display: inline-table;
+	vertical-align: middle;
+	}
+
+#nav-links a {
+	color:FFFFFF; 
+	}
+	
 /*detail page*/
 
 /*story div*/
