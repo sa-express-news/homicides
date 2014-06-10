@@ -70,7 +70,7 @@
 			</tr>
     	{% for obj in object_list %}		
         	<tr>
-            	<td><a href="{{ obj.HomicideNbr }}/">{{ obj.onlineName }}</a></td>
+            	<td><a href="{{ obj.app_year }}/{{ obj.HomicideNbr }}/">{{ obj.onlineName }}</a></td>
 				<td>{{ obj.Date }}</td>
 				<td>{{ obj.fixedAddress }}</td>
 				<td>{{ obj.METHOD|title }}</td>
