@@ -12,6 +12,7 @@ csv_list = list(csv_obj)
 
 murders_by_year = {}
 murders_by_year_grpd = {}
+# murder_list = []
 
 for key, group in groupby(csv_list, lambda t: t['app_year']):
     murders_by_year[key] = list(group)
@@ -25,6 +26,19 @@ def index():
         object_list = csv_list,
     )
     
+@app.route('/<year>/')
+def year_index(year):
+    murder_list = []  
+
+    for key, value in murders_by_year_grpd[year].iteritems():
+        murder_list.append(value)
+        murder_list  
+
+    return render_template('year_index.html', 
+        object_list = murder_list,
+        )
+
+
 @app.route('/<year>/<number>/')
 def detail(year, number):
     return render_template('detail.html',
