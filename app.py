@@ -6,13 +6,11 @@ from flask import render_template
 app = Flask(__name__)
 
 csv_path = './static/07-08-test.csv'
-#csv_path = './static/test.csv'
 csv_obj = csv.DictReader(open(csv_path, 'r'))
 csv_list = list(csv_obj)
 
 murders_by_year = {}
 murders_by_year_grpd = {}
-# murder_list = []
 
 for key, group in groupby(csv_list, lambda t: t['app_year']):
     murders_by_year[key] = list(group)
