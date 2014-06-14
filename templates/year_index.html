@@ -1,0 +1,125 @@
+<html lang="en">
+    <head>
+        <!--meta-->
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--title and shit-->
+        <title>Homicides in San Antonio in 2007</title>
+        <!--map code-->
+            <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+            <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js?2"></script>
+        <!--css/boostrap-->
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/en-style.css') }}" />
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->   
+    </head>
+    <body>
+        <!--navigation-->
+        <nav title="Navigation">
+                <div class="nav-tophat">
+                    <div class="nav-container">
+                    <a id="nav-enlogo" href="http://mysanantonio.com/"></a>
+                    <ul id="nav-links">
+                            <li>
+                                <a href="http://www.mysanantonio.com/news/local/">Local</a>
+                            </li>
+                            <li>
+                                <a href="http://www.mysanantonio.com/news/politics/">Politics</a>
+                            </li>   
+                            <li>
+                                <a href="http://www.mysanantonio.com/news/us-world/">U.S. & World</a>                           
+                            </li>
+                            <li>
+                                <a href="http://www.mysanantonio.com/opinion/">Opinion</a>                          
+                            </li>
+                            <li>
+                                <a href="http://www.mysanantonio.com/business/">Business</a>                            
+                            </li>
+                            <li>
+                                <a href="http://www.mysanantonio.com/sports/">Sports</a>                            
+                            </li>
+                            <li>
+                                <a href="http://www.mysanantonio.com/entertainment/">Arts</a>                           
+                            </li>
+                            <li>
+                                <a href="http://www.mysanantonio.com/lifestyle/">Life</a>                           
+                            </li>
+                        </ul>
+                    </div>  
+                </div>
+        </nav>
+        <h1>San Antonio Homicides: 2007</h1>
+        <!--Subhead and chatter will go here with H2 or H3 styling-->
+        <div id="map" style="width:100%; height:375px;"></div>
+        <p>
+        <p>
+        <table border=1 cellpadding=7>
+            <tr>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Address</th>
+                <th>Cause of Death</th>
+                <th>Age</th>
+                <th>Race</th>
+            </tr>
+        {% for obj in object_list %}       
+            <tr>
+                <td><a href="{{ obj.HomicideNbr }}/">{{ obj.onlineName }}</a></td>
+                <td>{{ obj.Date }}</td>
+                <td>{{ obj.fixedAddress }}</td>
+                <td>{{ obj.METHOD|title }}</td>
+                <td>{{ obj.enAge }}</td>
+                <td>{{ obj.Race }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+            <script type="text/javascript">
+                var map = L.map('map').setView([29.4240317, -98.5137178], 10);
+                var mapquestLayer = new L.TileLayer('http://{s}.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.png', {
+                    maxZoom: 18,
+                    attribution: 'Data, imagery and map information provided by <a href="http://open.mapquest.co.uk" target="_blank">MapQuest</a>,<a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> and contributors.',
+                    subdomains: ['otile1','otile2','otile3','otile4']
+                });
+            map.addLayer(mapquestLayer);
+            var data = {
+              "type": "FeatureCollection",
+              "features": [
+                {% for obj in object_list %}
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "{{ obj.onlineName }}",
+                    "id": "{{ obj.HomicideNbr }}"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [{{ obj.X }}, {{ obj.Y }}]
+                  }
+                }{% if not loop.last %},{% endif %}
+                {% endfor %}
+              ]
+            };
+            var dataLayer = L.geoJson(data, {
+                onEachFeature: function(feature, layer) {
+                    layer.bindPopup(
+                        '<a href="' + feature.properties.id + '/">' +
+                            feature.properties.full_name +
+                        '</a>'
+                    );
+                }
+            });
+            map.addLayer(dataLayer);
+        </script>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+        <!--Built with the help, both witting and unwitting, of the kind folks on The Los Angeles Times' data desk-->
+    </body>
+</html>
