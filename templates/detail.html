@@ -2,12 +2,60 @@
 	<head>
 		<link rel="stylesheet" href="css/styles.css" />
 		<title>{{ object.onlineName }}</title>
+		<!--css/boostrap-->
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/en-style.css') }}" />
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->   
 	</head>
 	<body>
-		<h1>{{ object.onlineName }},</h1> <h2>{{ object.enAgeCalc }}</h2>
+	<!--navigation-->
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="nav-tophat">
+				<a id="nav-enlogo" href="http://mysanantonio.com/"></a>
+				<div class="collapse navbar-collapse">
+                    <div class="nav-container">
+                    	<ul id="nav-links">
+                            <li>
+                                <a href="http://www.mysanantonio.com/news/local/">Local</a>
+                            </li>
+                            <li>
+                                <a href="http://www.mysanantonio.com/news/politics/">Politics</a>
+                            </li>   
+                            <li>
+                                <a href="http://www.mysanantonio.com/news/us-world/">U.S. & World</a>                           
+                            </li>
+                            <li>
+                                <a href="http://www.mysanantonio.com/opinion/">Opinion</a>                          
+                            </li>
+                            <li>
+                                <a href="http://www.mysanantonio.com/business/">Business</a>                            
+                            </li>
+                            <li>
+                                <a href="http://www.mysanantonio.com/sports/">Sports</a>                            
+                            </li>
+                            <li>
+                                <a href="http://www.mysanantonio.com/entertainment/">Arts</a>                           
+                            </li>
+                            <li>
+                                <a href="http://www.mysanantonio.com/lifestyle/">Life</a>                           
+                            </li>
+                        </ul>
+                    </div>    
+                    </div>  
+                </div>
+        </nav>
+        <!--end navigation block-->
+		<!--story/headline-->
+		<h1>{{ object.onlineName }}, {{ object.enAgeCalc }}</h1>
 		<h4>Age: {{ object.enAgeCalc }} | Race: {{ object.Race }} | Gender: {{ object.Gender }}</h3>
-		<div class = "story"> {{ object.Story_Nut }}</div>
+		<div class = "story"> {{ object.Story_Nut }} Story will go here</div>
 		<p>
-		<div class = "story-byline"> {{ object.Story_Byline }}, {{ object.Story_Credit }} </div>
+		<div class = "story-byline"> {{ object.Story_Byline }}Byline will go here, {{ object.Story_Credit }} </div>
+		<!--end story-->
 		</body>
 </html>
