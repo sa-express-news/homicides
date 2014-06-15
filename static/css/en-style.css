@@ -1,14 +1,14 @@
 /*basics*/
 body {
 	margin: 0;
-	padding: 0;
+	padding-top: 40px;
 	font-family: Georgia, serif;
 	}
 	
 /*navigation*/
 nav {
 	background: #282828;
-	min-height: 50px;
+	height: 50px;
 	width: 100%;
 	position: relative;
 	}
