@@ -5,7 +5,7 @@
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1">
         <!--title-->
-        <title>Homicides in San Antonio in 2007</title>
+        <title>Homicides in San Antonio in {{ object_list[0].app_year }}</title>
         <!--map code-->
             <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
             <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js?2"></script>
@@ -57,7 +57,9 @@
                 </div>
         </nav>
         <!--end navigation block-->
-        <h1>San Antonio Homicides: YEAR</h1>
+              
+        <h1>San Antonio Homicides: {{ object_list[0].app_year }} </h1>
+        
         <!--Subhead and chatter will go here with H2 or H3 styling-->
         <div id="map" style="width:100%; height:425px;"></div>
         <p>
