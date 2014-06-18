@@ -4,7 +4,6 @@ body {
 	padding-top: 40px;
 	margin-left: 1.5%;
 	margin-right: 1.5%;
-	font-family: Georgia, serif;
 	}
 	
 /*navigation*/
@@ -62,6 +61,11 @@ nav {
 	color:FFFFFF; 
 	}
 	
+/*yearindex page*/
+table {
+	font-size: 12px;
+	}
+
 /*detail page*/
 
 /*story div*/
