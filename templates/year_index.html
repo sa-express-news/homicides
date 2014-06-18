@@ -12,6 +12,18 @@
         <!--css/boostrap-->
             <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
             <link rel="stylesheet" href="{{ url_for('static', filename='css/en-style.css') }}" />
+        <!--datatables-->
+        	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.0/css/jquery.dataTables.css">
+        	<!--use this jquery library for both bootstrap and datatables-->
+        		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> 
+        	<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.0/js/jquery.dataTables.js"></script>
+        	<script type="text/javascript" class="init">
+        		$(document).ready( function () {
+    				$('#example').DataTable( {
+    					paging: false
+    				} );
+				} );
+        	</script>
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -64,25 +76,29 @@
         <div id="map" style="width:100%; height:425px;"></div>
         <p>
         <p>
-        <table border=1 cellpadding=7>
-            <tr>
-                <th>Name</th>
-                <th>Date</th>
-                <th>Address</th>
-                <th>Cause of Death</th>
-                <th>Age</th>
-                <th>Race</th>
-            </tr>
-        {% for obj in object_list %}       
-            <tr>
-                <td><a href="{{ obj.HomicideNbr }}/">{{ obj.onlineName }}</a></td>
-                <td>{{ obj.Date }}</td>
-                <td>{{ obj.fixedAddress }}</td>
-                <td>{{ obj.METHOD|title }}</td>
-                <td>{{ obj.enAge }}</td>
-                <td>{{ obj.Race }}</td>
-            </tr>
-        {% endfor %}
+        <table id="example" class="display">
+        	<thead>    
+            	<tr>
+                	<th>Name</th>
+                	<th>Date</th>
+                	<th>Address</th>
+                	<th>Cause of Death</th>
+                	<th>Age</th>
+                	<th>Race</th>
+            	</tr>
+            </thead>
+            <tbody>
+        	{% for obj in object_list %}       
+            	<tr>
+                	<td><a href="{{ obj.HomicideNbr }}/">{{ obj.onlineName }}</a></td>
+                	<td>{{ obj.Date }}</td>
+                	<td>{{ obj.fixedAddress }}</td>
+                	<td>{{ obj.METHOD|title }}</td>
+                	<td>{{ obj.enAge }}</td>
+                	<td>{{ obj.Race }}</td>
+            	</tr>
+        	{% endfor %}
+        	</tbody>
         </table>
             <script type="text/javascript">
                 var map = L.map('map').setView([29.4240317, -98.5137178], 10);
@@ -122,9 +138,8 @@
             map.addLayer(dataLayer);
         </script>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="js/bootstrap.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
         <!--Built with the help, both witting and unwitting, of the kind folks on The Los Angeles Times' data desk-->
     </body>
 </html>
