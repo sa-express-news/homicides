@@ -1,11 +1,8 @@
 /*basics*/
 body {
-	margin: 0;
-	padding-top: 40px;
-	margin-left: 1.5%;
-	margin-right: 1.5%;
+
 	}
-	
+
 /*navigation*/
 nav {
 	background: #282828;
@@ -62,11 +59,27 @@ nav {
 	}
 	
 /*yearindex page*/
+.yearindex-page {
+	padding-top: 40px;
+	margin: 0;
+	margin-left: 1.5%;
+	margin-right: 1.5%;
+	}
+
 table {
 	font-size: 12px;
 	}
 
 /*detail page*/
+.detail-page {
+	padding-top: 50px;
+	margin: 0;
+	}
+	
+.detail-mainbody {
+	margin-left: 1.5%;
+	margin-right: 1.5%;
+	}
 
 /*story div*/
 
