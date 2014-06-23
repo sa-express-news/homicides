@@ -51,14 +51,17 @@
                     </div>  
                 </div>
         </nav>
-     <!--end navigation block-->
+    <!--end navigation block-->
+    <!--map div-->    
         <div id="map" style="width:100%; height:300px;"></div>
 	<!--story/headline-->
-		<h1>{{ object.onlineName }}, {{ object.enAgeCalc }}</h1>
-		<h4>Age: {{ object.enAgeCalc }} | Race: {{ object.Race }} | Gender: {{ object.Gender }}</h3>
-		<div class = "story"> {{ object.Story_Nut }} Story will go here</div>
-		<p>
-		<div class = "story-byline"> {{ object.Story_Byline }}Byline will go here, {{ object.Story_Credit }} </div>
+		<div class="detail-mainbody">
+			<h1>{{ object.onlineName }}, {{ object.enAgeCalc }}</h1>
+			<h4>Age: {{ object.enAgeCalc }} | Race: {{ object.Race }} | Gender: {{ object.Gender }}</h3>
+			<div class = "story"> {{ object.Story_Nut }} Story will go here</div>
+			<p>
+			<div class = "story-byline"> {{ object.Story_Byline }}Byline will go here, {{ object.Story_Credit }} </div>
+		</div>
 	<!--end story-->
 	<!--leafet code-->
 		<script type="text/javascript">
