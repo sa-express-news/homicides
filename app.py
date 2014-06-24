@@ -5,7 +5,8 @@ from flask import render_template
 
 app = Flask(__name__)
 
-csv_path = './static/07-08-test.csv'
+#csv_path = './static/07-08-test.csv'
+csv_path = './static/2007.csv'
 csv_obj = csv.DictReader(open(csv_path, 'r'))
 csv_list = list(csv_obj)
 
@@ -47,7 +48,7 @@ def detail(year, number):
 if __name__ == '__main__':
     app.run(
         host="0.0.0.0",
-        port=8000,
+        port=8001,
         use_reloader=True,
         debug=True,
     )

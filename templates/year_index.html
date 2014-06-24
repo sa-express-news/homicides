@@ -91,11 +91,11 @@
         	{% for obj in object_list %}       
             	<tr>
                 	<td><a href="{{ obj.HomicideNbr }}/">{{ obj.onlineName }}</a></td>
-                	<td>{{ obj.Date }}</td>
-                	<td>{{ obj.fixedAddress }}</td>
+                	<td>{{ obj.IncidentDate }}</td>
+                	<td>{{ obj.SapdADDRESS }}</td>
                 	<td>{{ obj.METHOD|title }}</td>
-                	<td>{{ obj.enAge }}</td>
-                	<td>{{ obj.Race }}</td>
+                	<td>{{ obj.X }}</td>
+                	<td>{{ obj.Y }}</td>
             	</tr>
         	{% endfor %}
         	</tbody>
@@ -107,6 +107,7 @@
                     attribution: 'Data, imagery and map information provided by <a href="http://open.mapquest.co.uk" target="_blank">MapQuest</a>,<a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> and contributors.',
                     subdomains: ['otile1','otile2','otile3','otile4']
                 });
+
             map.addLayer(mapquestLayer);
             var data = {
               "type": "FeatureCollection",
@@ -126,6 +127,9 @@
                 {% endfor %}
               ]
             };
+
+            console.log(data);
+
             var dataLayer = L.geoJson(data, {
                 onEachFeature: function(feature, layer) {
                     layer.bindPopup(
@@ -135,6 +139,8 @@
                     );
                 }
             });
+
+            console.log(dataLayer);
             map.addLayer(dataLayer);
         </script>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
