@@ -84,7 +84,7 @@
                 	<th>Address</th>
                 	<th>Cause of Death</th>
                 	<th>Age</th>
-                	<th>Race</th>
+                	<th>Race/Ethnicity</th>
             	</tr>
             </thead>
             <tbody>
@@ -94,8 +94,8 @@
                 	<td>{{ obj.IncidentDate }}</td>
                 	<td>{{ obj.SapdADDRESS }}</td>
                 	<td>{{ obj.METHOD|title }}</td>
-                	<td>{{ obj.X }}</td>
-                	<td>{{ obj.Y }}</td>
+                	<td>{{ obj.enDOB }}</td>
+                	<td>{{ obj.Race }}</td>
             	</tr>
         	{% endfor %}
         	</tbody>

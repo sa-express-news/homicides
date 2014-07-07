@@ -7,6 +7,9 @@
 		<!--css/boostrap-->
             <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
             <link rel="stylesheet" href="{{ url_for('static', filename='css/en-style.css') }}" />
+
+
+            
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -54,15 +57,44 @@
     <!--end navigation block-->
     <!--map div-->    
         <div id="map" style="width:100%; height:300px;"></div>
+	<center>
 	<!--story/headline-->
 		<div class="detail-mainbody">
-			<h1>{{ object.onlineName }}, {{ object.enAgeCalc }}</h1>
-			<h4>Age: {{ object.enAgeCalc }} | Race: {{ object.Race }} | Gender: {{ object.Gender }}</h3>
-			<div class = "story"> {{ object.Story_Nut }} Story will go here</div>
-			<p>
-			<div class = "story-byline"> {{ object.Story_Byline }}Byline will go here, {{ object.Story_Credit }} </div>
+			<!--app navigation-->
+			<div class="app-nav">
+				<h4>Navigation</h5>	
+				<h5>Home</h4>
+				<h5>Search by year:</h5>
+				<div class="btn-group">
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+    				Year <span class="caret"></span>
+  					</button>
+  					
+  						<ul class="dropdown-menu" role="menu">
+    						<li><a href="#">2007</a></li>
+    						<li><a href="#">2008</a></li>
+    						<li><a href="#">2009</a></li>
+    						<li><a href="#">2010</a></li>
+    						<li><a href="#">2011</a></li>
+    						<li><a href="#">2012</a></li>
+    						<li><a href="#">2013</a></li>
+    						<li><a href="#">2014</a></li>
+    						<li><a href="#">Main Page</a></li>
+
+  						</ul>
+				</div>
+			</div>
+			<div class="info-body">
+				<h1>{{ object.onlineName }}, {{ object.enAgeCalc }}</h1>
+				<h4>Age: {{ object.enAgeCalc }} | Race: {{ object.Race }} | Gender: {{ object.Gender }}</h3>
+				<div class = "story"> {{ object.Story_Nut }} Story will go here</div>
+				<p>
+				<div class = "story-byline"> {{ object.Story_Byline }}Byline will go here, {{ object.Story_Credit }} </div>
+			</div>
+			<div style="clear: both;"></div>
 		</div>
 	<!--end story-->
+	</center>
 	<!--leafet code-->
 		<script type="text/javascript">
             var map = L.map('map').setView([{{ object.Y }}, {{ object.X }}], 15);
@@ -75,5 +107,9 @@
             var marker = L.marker([{{ object.Y }}, {{ object.X }}]).addTo(map);
         </script>
     <!--end leaflet code-->
+	<!--dropdown menu code-->	
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
 	</body>
 </html>
