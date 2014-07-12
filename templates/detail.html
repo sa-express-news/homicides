@@ -57,8 +57,7 @@
     <!--end navigation block-->
     <!--map div-->    
         <div id="map" style="width:100%; height:300px;"></div>
-	<center>
-	<!--story/headline-->
+	<!--main body-->
 		<div class="detail-mainbody">
 			<!--app navigation-->
 			<div class="app-nav">
@@ -84,17 +83,39 @@
   						</ul>
 				</div>
 			</div>
+			<!-- murder info/story-->
 			<div class="info-body">
-				<h1>{{ object.onlineName }}, {{ object.enAgeCalc }}</h1>
-				<h4>Age: {{ object.enAgeCalc }} | Race: {{ object.Race }} | Gender: {{ object.Gender }}</h3>
-				<div class = "story"> {{ object.Story_Nut }} Story will go here</div>
-				<p>
-				<div class = "story-byline"> {{ object.Story_Byline }}Byline will go here, {{ object.Story_Credit }} </div>
+				<div class = "headline">
+					<h1>{{ object.onlineName }}, {{ object.enAgeCalc }}</h1>
+				</div>
+				<!--share buttons will go here-->
+				<div class = "info-container">
+					<!--main story-->
+					<div class = "story-container">
+						<div class = "story"> {{ object.Story_Nut }} Story will go here</div>
+						<div class = "story-byline"> {{ object.Story_Byline }}Byline will go here, {{ object.Story_Credit }} </div>
+					</div>
+					<p>
+					<!--factbox-->
+					<div class = "factbox-container">
+						<div id= "factbox-brand"><h4 class="factbox-title">Factbox:</h4></div>
+						<ul class="factbox-info">
+							<li><strong>Date of incident:</strong>
+							<p>{{ object.IncidentDate }}</li>
+							<li><strong>Address:</strong>
+							<p>{{ object.enAddress }}</li>
+							<li><strong>Age:</strong> {{ object.enAgeCalc }}</li> 
+							<li><strong>Race:</strong> {{ object.Race }}</li>
+							<li><strong>Gender:</strong> {{ object.Gender }}</li>							
+						</ul>
+					</div>
+					<div style="clear: both;"></div>
+				</div>
 			</div>
 			<div style="clear: both;"></div>
 		</div>
-	<!--end story-->
-	</center>
+				
+				
 	<!--leafet code-->
 		<script type="text/javascript">
             var map = L.map('map').setView([{{ object.Y }}, {{ object.X }}], 15);
