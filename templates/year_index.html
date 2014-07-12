@@ -129,8 +129,20 @@
             };
 
             console.log(data);
-
-            var dataLayer = L.geoJson(data, {
+			
+			var geojsonMarkerOptions = {
+    			radius: 7,
+    			fillColor: "#ff6600",
+    			color: "#000",
+    			weight: 1,
+   				opacity: 1,
+    			fillOpacity: 0.8
+			};
+			
+			var dataLayer = L.geoJson(data, {
+                pointToLayer: function (feature, latlng) {
+        			return L.circleMarker(latlng, geojsonMarkerOptions);
+        		},
                 onEachFeature: function(feature, layer) {
                     layer.bindPopup(
                         '<a href="' + feature.properties.id + '/">' +
