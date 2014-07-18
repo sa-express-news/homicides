@@ -3869,10 +3869,18 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-brand {
   float: left;
-  padding: 15px 15px;
+  margin-right: 25px;
+  margin-left: 20px;
+  padding-top: 15px; 
+  padding-right: 30px;
   font-size: 18px;
   line-height: 20px;
   height: 50px;
+  width: 212px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-image: url(images/SAEN-Lines-Bw.png);
+
 }
 .navbar-brand:hover,
 .navbar-brand:focus {
@@ -4181,7 +4189,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   border-color: #080808;
 }
 .navbar-inverse .navbar-brand {
-  color: #777777;
+  color: #ffffff;
 }
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
@@ -4189,10 +4197,10 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   background-color: transparent;
 }
 .navbar-inverse .navbar-text {
-  color: #777777;
+  color: #ffffff;
 }
 .navbar-inverse .navbar-nav > li > a {
-  color: #777777;
+  color: #ffffff;
 }
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
