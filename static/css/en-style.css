@@ -79,11 +79,25 @@ nav {
 	position: absolute;
 	color: #FFFFFF;
 	font-family: Arial, sans-serif;
-	font-size: 64px;
+	font-size: 72px;
 	font-weight: bold;
 	text-transform: uppercase;
-	margin-left:2%;
+	margin-left:2.5%;
 	bottom:-15px;
+}
+
+#splash-dek {
+	margin-left:2.5%;
+	margin-right: 2.5%;
+	margin-top: 15px;
+	font-family: Georgia, Serif;
+}
+
+#splash-intro {
+	margin-left: 2.5%;
+	margin-right: 2.5%;
+	font-family: Georgia, Serif;
+	font-size: 125%;
 }
 	
 /*yearindex page*/
@@ -184,3 +198,11 @@ table {
 	}
 
 /*byline div*/
+.byline {
+	font-family: Georgia, Serif;
+	}
+
+.byline ul {
+	list-style-type: square;
+	margin-left: 1%;
+	}
