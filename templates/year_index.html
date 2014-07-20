@@ -16,7 +16,7 @@
         <!--datatables-->
         	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.0/css/jquery.dataTables.css">
         	<!--use this jquery library for both bootstrap and datatables-->
-        		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> 
+        		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         	<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.0/js/jquery.dataTables.js"></script>
         	<script type="text/javascript" class="init">
         		$(document).ready( function () {
@@ -120,9 +120,10 @@
         	{% endfor %}
         	</tbody>
         </table>
-            <script type="text/javascript">
-                var map = L.map('map').setView([29.4467297, -98.5094801], 10);
-                var layer = new L.StamenTileLayer("toner-lite");
+        <!--map code-->
+        <script type="text/javascript">
+            var map = L.map('map').setView([29.4467297, -98.5094801], 10);
+            var layer = new L.StamenTileLayer("toner-lite");
 
             map.addLayer(layer);
             var data = {

@@ -12,7 +12,6 @@
         <!--css/boostrap-->
             <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}" />
             <link rel="stylesheet" href="{{ url_for('static', filename='css/en-style.css') }}" />
-            <link rel="stylesheet" href="{{ url_for('static', filename='css/en-nav.css') }} />
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     	<!--[if lt IE 9]>
@@ -24,21 +23,20 @@
     	<!--navigation-->
     <!-- Fixed navbar -->
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-      
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#"></a>
-        </div>
-        <div class="navbar-collapse collapse">
-        <div class="nav-tophat">
-          <ul class="nav navbar-nav">
-			<li class="dropdown">
+		<div class="container">
+        	<div class="navbar-header">
+          		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            		<span class="sr-only">Toggle navigation</span>
+            		<span class="icon-bar"></span>
+            		<span class="icon-bar"></span>
+            		<span class="icon-bar"></span>
+          		</button>
+          		<a class="navbar-brand" href="#"></a>
+        	</div>
+        	<div class="navbar-collapse collapse">
+        	<div class="nav-tophat">
+          		<ul class="nav navbar-nav">
+					<li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search by year<span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
                 <li><a href="/2007">2007</a></li>
@@ -79,13 +77,18 @@
       </div>
     </div>
 	<!--end navigation block-->
-    <div class="container">    
-        <!--splash image goes here-->
+    <!--splash image goes here-->
+    <div class="splash-container">
+        <img id="splash-image" src="{{ url_for('static', filename = 'images/splashmain-use.jpg') }}" alt="This is a photo from a SAPD crime scene, where police were investigating a suspected homicide in 2012" />
+        <p id="splash-hed">Homicide:</p>
+    </div>
+
     	<h1>San Antonio Homicides</h1>
     	<!--Subhead and chatter will go here with H2 or H3 styling-->
     	<div id="map" style="width:100%; height:375px;"></div>
     	<p>
     	<p>
+	<div class="container">    
     </div><!--closes container-->
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
