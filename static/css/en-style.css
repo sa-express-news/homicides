@@ -1,11 +1,8 @@
 /*basics*/
-body {
 
-	}
 
 /*navigation*/
 .nav-tophat {
-	width: 100%;
 	color: #FFFFFF;
 	font-family: Arial, sans-serif;
 	font-size: 11px;
@@ -71,11 +68,11 @@ nav {
 	max-width: 100%;
 	height: auto;
 	z-index: 0;
-}
+	}
 
 #splash-hed {
 	z-index: 100;
-	width: 100%;
+	width: 50%;
 	position: absolute;
 	color: #FFFFFF;
 	font-family: Arial, sans-serif;
@@ -84,21 +81,46 @@ nav {
 	text-transform: uppercase;
 	margin-left:2.5%;
 	bottom:-15px;
-}
+	}
 
 #splash-dek {
 	margin-left:2.5%;
 	margin-right: 2.5%;
 	margin-top: 15px;
 	font-family: Georgia, Serif;
-}
+	}
 
 #splash-intro {
 	margin-left: 2.5%;
 	margin-right: 2.5%;
 	font-family: Georgia, Serif;
 	font-size: 125%;
-}
+	}
+
+.year-outer-container {
+	width: 100%;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	}
+
+.year-inner-container {
+	width: 100%;
+	}
+
+.year {
+	float: left;
+	width: 28%;
+	border-style: solid;
+	border-width: 1px;
+	margin-left: 1%;
+	margin-right: 1%
+	margin-top: 1%;
+	margin-bottom: 1%;
+	padding-left: 1%;
+	padding-right: 1%;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	}
 	
 /*yearindex page*/
 .yearindex-page {
