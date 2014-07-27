@@ -1,6 +1,6 @@
 import csv
 import os
-import gspread
+#import gspread
 from itertools import groupby
 from flask import Flask
 from flask import render_template
