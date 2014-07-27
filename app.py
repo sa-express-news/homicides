@@ -1,14 +1,17 @@
 import csv
+import os
+import gspread
 from itertools import groupby
 from flask import Flask
 from flask import render_template
 
 app = Flask(__name__)
 
-#csv_path = './static/07-08-test.csv'
-csv_path = './static/2007.csv'
+csv_path = './static/master.csv'
+
 csv_obj = csv.DictReader(open(csv_path, 'r'))
 csv_list = list(csv_obj)
+
 
 murders_by_year = {}
 murders_by_year_grpd = {}
