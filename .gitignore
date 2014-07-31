@@ -3,3 +3,4 @@
 
 .DS_Store
 geocoder_gspread.py
+*.pyc

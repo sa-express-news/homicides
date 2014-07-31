@@ -1,0 +1,159 @@
+<html>
+	<head>
+		<title>Kenneth Polan</title>
+		<!--map/leaflet-->
+			<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+            <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js?2"></script>
+            <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
+		<!--css/boostrap-->
+            <link rel="stylesheet" href="/static/css/bootstrap.css" />
+            <link rel="stylesheet" href="/static/css/en-style.css" />
+
+
+            
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->   
+	</head>
+	<body class="detail-page">
+	<!--navigation-->
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container">
+        	<div class="navbar-header">
+          		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            		<span class="sr-only">Toggle navigation</span>
+            		<span class="icon-bar"></span>
+            		<span class="icon-bar"></span>
+            		<span class="icon-bar"></span>
+          		</button>
+          		<a class="navbar-brand" href="#"></a>
+        	</div>
+        	<div class="navbar-collapse collapse">
+        	<div class="nav-tophat">
+          		<ul class="nav navbar-nav">
+					<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search by year<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="/2007">2007</a></li>
+                <li><a href="/2008">2008</a></li>
+                <li><a href="/2009">2009</a></li>
+                <li><a href="/2010">2010</a></li>
+                <li><a href="/2011">2011</a></li>
+                <li><a href="/2012">2012</a></li>
+                <li><a href="/2013">2013</a></li>
+                <li><a href="/2014">2014</a></li>
+              </ul>
+            </li>            
+                    <li>
+                        <a href="http://www.mysanantonio.com/news/local/">Local</a>
+                    </li>
+                    <li>
+                        <a href="http://www.mysanantonio.com/news/politics/">Politics</a>
+                    </li>   
+                    <li>
+                        <a href="http://www.mysanantonio.com/news/us-world/">U.S. & World</a>                           
+                    </li>
+                    <li>
+                        <a href="http://www.mysanantonio.com/opinion/">Opinion</a>                          
+                    </li>
+                    <li>
+                        <a href="http://www.mysanantonio.com/business/">Business</a>                            
+                    </li>
+                    <li>
+                        <a href="http://www.mysanantonio.com/sports/">Sports</a>                            
+                    </li>
+                    <li>
+                        <a href="http://www.mysanantonio.com/entertainment/">Life & Arts</a>                           
+                    </li>
+
+          </ul>
+        </div><!--/nav-tophat-->
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <!--end navigation block-->
+    <!--map div-->    
+        <div id="map" style="width:100%; height:300px;"></div>
+	<!--main body-->
+		<div class="detail-mainbody">
+			<!--app navigation-->
+			<div class="app-nav">
+				<h4>Navigation</h5>	
+				<h5>Home</h4>
+				<h5>Search by year:</h5>
+				<div class="btn-group">
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+    				Year <span class="caret"></span>
+  					</button>
+  					
+  						<ul class="dropdown-menu" role="menu">
+    						<li><a href="#">2007</a></li>
+    						<li><a href="#">2008</a></li>
+    						<li><a href="#">2009</a></li>
+    						<li><a href="#">2010</a></li>
+    						<li><a href="#">2011</a></li>
+    						<li><a href="#">2012</a></li>
+    						<li><a href="#">2013</a></li>
+    						<li><a href="#">2014</a></li>
+    						<li><a href="#">Main Page</a></li>
+
+  						</ul>
+				</div>
+			</div>
+			<!-- murder info/story-->
+			<div class="info-body">
+				<div class = "headline">
+					<h1>Kenneth Polan, 43</h1>
+				</div>
+				<!--share buttons will go here-->
+				<div class = "info-container">
+					<!--main story-->
+					<div class = "story-container">
+						<div class = "story">  Story will go here</div>
+						<div class = "story-byline"> Byline will go here,  </div>
+					</div>
+					<p>
+					<!--factbox-->
+					<div class = "factbox-container">
+						<div id= "factbox-brand"><h4 class="factbox-title">Factbox:</h4></div>
+						<ul class="factbox-info">
+							<li><strong>Date of incident:</strong>
+							<p>2007-08-29</li>
+							<li><strong>Address:</strong>
+							<p>19925 IH 10 West</li>
+							<li><strong>Age:</strong> 43</li> 
+							<li><strong>Race:</strong> White</li>
+							<li><strong>Gender:</strong> Male</li>							
+						</ul>
+					</div>
+					</div>
+					<div style="clear: both;"></div>
+				</div>
+			</div>
+			<div style="clear: both;"></div>
+		</div>
+				
+				
+	<!--leafet code-->
+		<script type="text/javascript">
+            var map = L.map('map').setView([29.628014, -98.611075], 15);
+            var layer = new L.StamenTileLayer("toner-lite");
+            var myIcon = L.icon({
+   				iconUrl: '/static/css/images/map-pin.png',
+    			iconSize: [30, 30],
+    			popupAnchor: [-3, -76],
+			});
+            map.addLayer(layer);
+            var marker = L.marker([29.628014, -98.611075], {icon: myIcon}).addTo(map);
+        </script>
+    <!--end leaflet code-->
+	<!--dropdown menu code-->	
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		<!--Based on the First News App bootcamp at NICAR14. Built with the help, both witting and unwitting, of the kind folks on The Los Angeles Times' data desk and Chicago Tribune's News Apps team-->
+	</body>
+</html>

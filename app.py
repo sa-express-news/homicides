@@ -22,6 +22,7 @@ for key, group in groupby(csv_list, lambda t: t['app_year']):
 for key, value in murders_by_year.iteritems():
     murders_by_year_grpd[key] = dict([[o['HomicideNbr'],o] for o in value])
 
+
 @app.route("/")
 def index():
     return render_template('index.html',

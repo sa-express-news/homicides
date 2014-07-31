@@ -1,0 +1,2239 @@
+<html lang="en">
+    <head>
+        <!--meta-->
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--title-->
+        <title>Homicides in San Antonio in 2010</title>
+        <!--map code-->
+            <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+            <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js?2"></script>
+            <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
+        <!--css/boostrap-->
+            <link rel="stylesheet" href="/static/css/bootstrap.css" />
+            <link rel="stylesheet" href="/static/css/en-style.css" />
+        <!--datatables-->
+        	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.0/css/jquery.dataTables.css">
+        	<!--use this jquery library for both bootstrap and datatables-->
+        		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        	<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.0/js/jquery.dataTables.js"></script>
+        	<script type="text/javascript" class="init">
+        		$(document).ready( function () {
+    				$('#example').DataTable( {
+    					paging: false
+    				} );
+				} );
+        	</script>
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->   
+    </head>
+    <body class="yearindex-page">
+        <!--navigation-->
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container">
+        	<div class="navbar-header">
+          		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            		<span class="sr-only">Toggle navigation</span>
+            		<span class="icon-bar"></span>
+            		<span class="icon-bar"></span>
+            		<span class="icon-bar"></span>
+          		</button>
+          		<a class="navbar-brand" href="#"></a>
+        	</div>
+        	<div class="navbar-collapse collapse">
+        	<div class="nav-tophat">
+          		<ul class="nav navbar-nav">
+					<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search by year<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="/2007">2007</a></li>
+                <li><a href="/2008">2008</a></li>
+                <li><a href="/2009">2009</a></li>
+                <li><a href="/2010">2010</a></li>
+                <li><a href="/2011">2011</a></li>
+                <li><a href="/2012">2012</a></li>
+                <li><a href="/2013">2013</a></li>
+                <li><a href="/2014">2014</a></li>
+              </ul>
+            </li>            
+                    <li>
+                        <a href="http://www.mysanantonio.com/news/local/">Local</a>
+                    </li>
+                    <li>
+                        <a href="http://www.mysanantonio.com/news/politics/">Politics</a>
+                    </li>   
+                    <li>
+                        <a href="http://www.mysanantonio.com/news/us-world/">U.S. & World</a>                           
+                    </li>
+                    <li>
+                        <a href="http://www.mysanantonio.com/opinion/">Opinion</a>                          
+                    </li>
+                    <li>
+                        <a href="http://www.mysanantonio.com/business/">Business</a>                            
+                    </li>
+                    <li>
+                        <a href="http://www.mysanantonio.com/sports/">Sports</a>                            
+                    </li>
+                    <li>
+                        <a href="http://www.mysanantonio.com/entertainment/">Life & Arts</a>                           
+                    </li>
+
+          </ul>
+        </div><!--/nav-tophat-->
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <!--end navigation block-->
+        <div class="main-body">      
+        <h1>San Antonio Homicides: 2010 </h1>
+        
+        <!--Subhead and chatter will go here with H2 or H3 styling-->
+        <div id="map" style="width:100%; height:350px;"></div>
+        <p>
+        <p>
+        <table id="example" class="display">
+        	<thead>    
+            	<tr>
+                	<th>Name</th>
+                	<th>Date</th>
+                	<th>Address</th>
+                	<th>Cause of Death</th>
+                	<th>Age</th>
+                	<th>Race/Ethnicity</th>
+            	</tr>
+            </thead>
+            <tbody>
+        	       
+            	<tr>
+                	<td><a href="24/">Roland Garcia</a></td>
+                	<td>2010-03-13</td>
+                	<td>1721 Pinn Road</td>
+                	<td>Blunt Force Trauma</td>
+                	<td>45</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="25/">Cassandra Watkins</a></td>
+                	<td>2010-03-15</td>
+                	<td>7226 Blanco Road</td>
+                	<td>Strangulation</td>
+                	<td>49</td>
+                	<td>Black</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="26/">Janet Tribolet</a></td>
+                	<td>2010-03-20</td>
+                	<td>271 E. Summit</td>
+                	<td>Shot</td>
+                	<td>78</td>
+                	<td>White</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="27/">Charles G. Tribolet</a></td>
+                	<td>2010-03-20</td>
+                	<td>271 E. Summit</td>
+                	<td>Shot</td>
+                	<td>57</td>
+                	<td>White</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="20/">Tony Duncan</a></td>
+                	<td>2010-02-26</td>
+                	<td>4938 Fredericksburg Road</td>
+                	<td>Shot</td>
+                	<td>27</td>
+                	<td>Black</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="21/">David Valdez Jr.</a></td>
+                	<td>2010-03-01</td>
+                	<td>1723 W. Laurel</td>
+                	<td>Shot</td>
+                	<td>18</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="22/">Manuel Guzman</a></td>
+                	<td>2004-09-09</td>
+                	<td>931 E. Southcross</td>
+                	<td>Blunt Force Trauma</td>
+                	<td>79</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="23/">Cesar L. Rodriguez</a></td>
+                	<td>2010-03-12</td>
+                	<td>800 Basse Road</td>
+                	<td>Shot</td>
+                	<td>26</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="28/">Ralph Weaverling</a></td>
+                	<td>2010-03-23</td>
+                	<td>820 E. Euclid</td>
+                	<td>Shot</td>
+                	<td>33</td>
+                	<td>White</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="29/">Johnny Trevino</a></td>
+                	<td>2010-03-24</td>
+                	<td>211 Thomas Jefferson</td>
+                	<td>Shot</td>
+                	<td>17</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="4/">Ethan Owen</a></td>
+                	<td>2010-01-10</td>
+                	<td>SE Loop 410 and IH10E</td>
+                	<td>Vehicular</td>
+                	<td>18</td>
+                	<td>White</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="8/">Samuel Johnson Jr</a></td>
+                	<td>2010-01-17</td>
+                	<td>1701 E Commerce</td>
+                	<td>Shot</td>
+                	<td>26</td>
+                	<td>Black</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="59/">Jerrmiah Estabrook</a></td>
+                	<td>2010-07-30</td>
+                	<td>5470 W. Military Dr. Apt 2302</td>
+                	<td>Trauma</td>
+                	<td>2</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="58/">Jeffrey Monroe</a></td>
+                	<td>2010-07-28</td>
+                	<td>2202 Fawnfield Lane</td>
+                	<td>Shot</td>
+                	<td>41</td>
+                	<td>White</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="55/">Jimmy Escoto</a></td>
+                	<td>2010-07-20</td>
+                	<td>5331 Little Creek</td>
+                	<td>Shot</td>
+                	<td>31</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="54/">Jeremy Garza</a></td>
+                	<td>2010-07-18</td>
+                	<td>6014 Blanco Road #111</td>
+                	<td>Shot</td>
+                	<td>18</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="57/">Heather Monroe</a></td>
+                	<td>2010-07-28</td>
+                	<td>2202 Fawnfield Lane</td>
+                	<td>Shot</td>
+                	<td>40</td>
+                	<td>White</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="56/">Arthur DeBaun</a></td>
+                	<td>2010-07-28</td>
+                	<td>2202 Fawnfield Lane</td>
+                	<td>Shot</td>
+                	<td>88</td>
+                	<td>White</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="51/">Khristopher Jones</a></td>
+                	<td>2010-06-30</td>
+                	<td>5903 Danny Kaye Drive</td>
+                	<td>Shot</td>
+                	<td>19</td>
+                	<td>Black</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="50/">Iris Mejia</a></td>
+                	<td>2010-06-27</td>
+                	<td>6900 W. Military Dr</td>
+                	<td>Shot</td>
+                	<td>18</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="53/">Lenora Frago</a></td>
+                	<td>2009-12-24</td>
+                	<td>12222 Blanco Road</td>
+                	<td>Shot</td>
+                	<td>23</td>
+                	<td>White</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="52/">Carlos Lopez</a></td>
+                	<td>2010-07-12</td>
+                	<td>2806 Longmeadow</td>
+                	<td>Shot</td>
+                	<td>26</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="88/">Jesus Hernandez</a></td>
+                	<td>2010-11-11</td>
+                	<td>954 F Street</td>
+                	<td>Shot</td>
+                	<td>49</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="89/">Troy Skidmore</a></td>
+                	<td>2010-11-12</td>
+                	<td>4840 Raybon</td>
+                	<td>Shot</td>
+                	<td>22</td>
+                	<td>Black</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="82/">Holden Resendez</a></td>
+                	<td>2010-11-04</td>
+                	<td>17635 Henderson Pass</td>
+                	<td>Beaten</td>
+                	<td>0</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="83/">Ryan Christopher Jones</a></td>
+                	<td>2010-11-06</td>
+                	<td>7918 Winter Park</td>
+                	<td>Shot</td>
+                	<td>24</td>
+                	<td>Black</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="80/">Rene Zapata</a></td>
+                	<td>2010-11-03</td>
+                	<td>527 Creath Place</td>
+                	<td>Shot</td>
+                	<td>19</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="81/">Liliana Trevino</a></td>
+                	<td>2010-11-04</td>
+                	<td>10419 Medio Creek</td>
+                	<td>Blunt Force Trauma</td>
+                	<td>0</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="86/">Ernesto Sanchez</a></td>
+                	<td>2010-11-11</td>
+                	<td>327 West Cypress Street</td>
+                	<td>Shot</td>
+                	<td>51</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="87/">Ofelia Alvarado</a></td>
+                	<td>2010-11-11</td>
+                	<td>137 Chickering</td>
+                	<td>Stabbed</td>
+                	<td>25</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="84/">Jesus Rosales</a></td>
+                	<td>2010-11-09</td>
+                	<td>1314 West Harding Place</td>
+                	<td>Shot</td>
+                	<td>23</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="85/">Jasmine Sharda Whipple</a></td>
+                	<td>2010-11-10</td>
+                	<td>1539 Gibbs Street</td>
+                	<td>Shot</td>
+                	<td>21</td>
+                	<td>Black</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="3/">Jose Contreras</a></td>
+                	<td>2010-01-09</td>
+                	<td>Casa Pinto and Casa Espana</td>
+                	<td>Shot</td>
+                	<td>26</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="7/">Jose Anselmo Gomez</a></td>
+                	<td>2010-01-16</td>
+                	<td>6811 Brownleaf Dr</td>
+                	<td>Shot</td>
+                	<td>34</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="39/">Jose Barea-Torres</a></td>
+                	<td>2010-05-13</td>
+                	<td>1830 Bandera</td>
+                	<td>Shot</td>
+                	<td>19</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="38/">Jason Medina</a></td>
+                	<td>2010-05-03</td>
+                	<td>1131 Austin Hwy</td>
+                	<td>Shot</td>
+                	<td>26</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="33/">Vanessa Marie Pitts</a></td>
+                	<td>2010-04-12</td>
+                	<td>7003 Hwy 90 West</td>
+                	<td>Vehicular</td>
+                	<td>25</td>
+                	<td>White</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="32/">Jose Flores</a></td>
+                	<td>2010-03-28</td>
+                	<td>1600 Madrid</td>
+                	<td>Stabbed</td>
+                	<td>35</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="31/">Jasmayne McCullough</a></td>
+                	<td>2010-03-28</td>
+                	<td>7810 Callaghan Road #1407</td>
+                	<td>Shot</td>
+                	<td>19</td>
+                	<td>Black</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="30/">Felipe Mendiola</a></td>
+                	<td>2010-03-25</td>
+                	<td>1830 San Francisco</td>
+                	<td>Shot</td>
+                	<td>51</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="37/">Jeffrey Safrin</a></td>
+                	<td>2010-05-02</td>
+                	<td>7171 Wurzbach apt 311</td>
+                	<td>Shot</td>
+                	<td>27</td>
+                	<td>White</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="36/">Dominique Smith</a></td>
+                	<td>2010-04-28</td>
+                	<td>Kay Ann at Carol Crest</td>
+                	<td>Shot</td>
+                	<td>20</td>
+                	<td>Black</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="35/">Valerie Cantu</a></td>
+                	<td>2010-04-18</td>
+                	<td>4900 New U.S. 90 W</td>
+                	<td>Vehicular</td>
+                	<td>21</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="34/">Deante Walker</a></td>
+                	<td>2010-04-13</td>
+                	<td>2303 Goliad Road</td>
+                	<td>Shot</td>
+                	<td>23</td>
+                	<td>Black</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="60/">Christopher Jackson</a></td>
+                	<td>2010-07-30</td>
+                	<td>1054 Austin Hwy, Room 15</td>
+                	<td>Stabbed</td>
+                	<td>36</td>
+                	<td>Black</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="61/">Juan Duran</a></td>
+                	<td>2010-08-02</td>
+                	<td>7141 W. Miltary Drive</td>
+                	<td>Beaten</td>
+                	<td>30</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="62/">Diana Conde</a></td>
+                	<td>2010-08-14</td>
+                	<td>7500 New Laredo Highway</td>
+                	<td>Vehicular</td>
+                	<td>44</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="63/">Johnny Garza</a></td>
+                	<td>2010-08-24</td>
+                	<td>1027 Lamar St</td>
+                	<td>Shot</td>
+                	<td>35</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="64/">Emerald Rodriguez</a></td>
+                	<td>2010-08-23</td>
+                	<td>119 Apperson</td>
+                	<td>Trauma</td>
+                	<td>0</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="65/">Andrew Ramirez</a></td>
+                	<td>2010-08-29</td>
+                	<td>1209 N. Olive</td>
+                	<td>Shot</td>
+                	<td>17</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="66/">Manuel Camarillo</a></td>
+                	<td>2010-08-29</td>
+                	<td>1209 N. Olive</td>
+                	<td>Shot</td>
+                	<td>22</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="67/">Dannilyn Lopez</a></td>
+                	<td>2010-07-10</td>
+                	<td>8021 W. Military Dr</td>
+                	<td>Undetermined</td>
+                	<td>0</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="68/">Jesse Cortez (didn&#39;t write about)</a></td>
+                	<td>2010-08-29</td>
+                	<td>Rivas and NW 28th St</td>
+                	<td>Blunt Force Trauma</td>
+                	<td>18</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="69/">Cesar Rosa-Gonzalez</a></td>
+                	<td>2010-09-08</td>
+                	<td>228 W. Ansley</td>
+                	<td>Stabbed</td>
+                	<td>23</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="2/">Jayda De La Rosa</a></td>
+                	<td>2009-09-23</td>
+                	<td>1107 Culebra</td>
+                	<td>Neglect</td>
+                	<td>0</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="6/">Santos Sanchez</a></td>
+                	<td>2010-01-13</td>
+                	<td>1918 SW Military Dr</td>
+                	<td>Shot</td>
+                	<td>19</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="99/">Jesse Ramirez</a></td>
+                	<td>2010-12-30</td>
+                	<td>2515 Clara Lane</td>
+                	<td>Blunt Force Trauma</td>
+                	<td>33</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="98/">Steven Wolfe</a></td>
+                	<td>2010-12-14</td>
+                	<td>841 E. Bitters Road</td>
+                	<td>Stabbed</td>
+                	<td>57</td>
+                	<td>White</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="91/">Alexander Schug</a></td>
+                	<td>2010-11-17</td>
+                	<td>4407 Longvale</td>
+                	<td>Shot</td>
+                	<td>20</td>
+                	<td>White</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="90/">Derek Lopez</a></td>
+                	<td>2010-11-12</td>
+                	<td>210 Roswell Canyon</td>
+                	<td>Shot</td>
+                	<td>14</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="93/">Bernardo Santoya</a></td>
+                	<td>2010-11-21</td>
+                	<td>126 Rio Verde</td>
+                	<td>Shot</td>
+                	<td>40</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="92/">Ivan Gaines</a></td>
+                	<td>2010-11-21</td>
+                	<td>4802 Ray Bon Drive</td>
+                	<td>Shot</td>
+                	<td>20</td>
+                	<td>Black</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="95/">Andres Soltero</a></td>
+                	<td>2010-11-30</td>
+                	<td>3160 Quail Valley</td>
+                	<td>Shot</td>
+                	<td>31</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="94/">Jose Reyes</a></td>
+                	<td>2010-11-28</td>
+                	<td>8000 Grissom Road</td>
+                	<td>Shot</td>
+                	<td>34</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="97/">Ethan Hector Altamirano</a></td>
+                	<td>2010-12-06</td>
+                	<td>303 Carlota</td>
+                	<td>Blunt Force Trauma</td>
+                	<td>3</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="96/">Grace Guerra</a></td>
+                	<td>2010-12-05</td>
+                	<td>6130 Ingram Road Apt. 1414</td>
+                	<td>Shot</td>
+                	<td>19</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="11/">Guillermo Garcia</a></td>
+                	<td>2010-02-02</td>
+                	<td>166 Weizmann</td>
+                	<td>Stabbed</td>
+                	<td>1</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="10/">Jose luis Garcia</a></td>
+                	<td>2010-02-02</td>
+                	<td>166 Weizmann</td>
+                	<td>Stabbed</td>
+                	<td>3</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="13/">Danny A. Thomas</a></td>
+                	<td>2010-02-04</td>
+                	<td>3903 Barrington</td>
+                	<td>Shot</td>
+                	<td>24</td>
+                	<td>Black</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="12/">Yvette Ibarra</a></td>
+                	<td>2010-02-04</td>
+                	<td>6136 Townhill</td>
+                	<td>Shot</td>
+                	<td>40</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="15/">Bernabe Maldonado</a></td>
+                	<td>2010-02-10</td>
+                	<td>1821 Bandera</td>
+                	<td>Shot</td>
+                	<td>50</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="14/">Apolonio Pacheco</a></td>
+                	<td>2010-02-10</td>
+                	<td>4951 Woodstone</td>
+                	<td>Shot</td>
+                	<td>28</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="17/">Pedro Antonio Salgado Jr</a></td>
+                	<td>2010-02-16</td>
+                	<td>7737 Skolout Apt. 326</td>
+                	<td>Drowned</td>
+                	<td>0</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="16/">Adam Thomas</a></td>
+                	<td>2010-02-14</td>
+                	<td>2600 Westward Drive Apt. #2409</td>
+                	<td>Stabbed</td>
+                	<td>40</td>
+                	<td>White</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="19/">Alvin Brown</a></td>
+                	<td>2009-12-05</td>
+                	<td>609 Delmar</td>
+                	<td>Homicidal Violence</td>
+                	<td>29</td>
+                	<td>Black</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="18/">Troy Clattenburg</a></td>
+                	<td>2010-02-21</td>
+                	<td>1440 Bitters Road Apt#603</td>
+                	<td>Shot</td>
+                	<td>24</td>
+                	<td>White</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="48/">Domingo Berlanga</a></td>
+                	<td>2010-06-20</td>
+                	<td>1209 San Luis</td>
+                	<td>Shot</td>
+                	<td>54</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="49/">Iesha Lawhorne</a></td>
+                	<td>2010-06-25</td>
+                	<td>5400 Evers Road</td>
+                	<td>Shot</td>
+                	<td>18</td>
+                	<td>Black</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="46/">Paul Stout</a></td>
+                	<td>2010-06-15</td>
+                	<td>82 Knights Peak</td>
+                	<td>Shot</td>
+                	<td>46</td>
+                	<td>White</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="47/">Robert Bonnett</a></td>
+                	<td>2010-06-19</td>
+                	<td>1202 E. Mulberry Avenue</td>
+                	<td>Stabbed</td>
+                	<td>53</td>
+                	<td>White</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="44/">Faith Escamilla</a></td>
+                	<td>2010-06-14</td>
+                	<td>6014 Blanco Road #405</td>
+                	<td>Asphyxia</td>
+                	<td>0</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="45/">Janice Maier</a></td>
+                	<td>2009-10-10</td>
+                	<td>14595 Nacogdoches Road</td>
+                	<td>Beaten</td>
+                	<td>78</td>
+                	<td>White</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="42/">Mario Alfonso Rodriguez Jr</a></td>
+                	<td>2010-06-07</td>
+                	<td>7405 Old Pearsall Road</td>
+                	<td>Shot</td>
+                	<td>33</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="43/">Pedro Garcia</a></td>
+                	<td>2010-06-13</td>
+                	<td>539 McCarty Road</td>
+                	<td>Shot</td>
+                	<td>26</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="40/">Ramiya Dawson</a></td>
+                	<td>2010-05-20</td>
+                	<td>1235 E. Mulberry Ave. Apt 205C</td>
+                	<td>Strangulation</td>
+                	<td>25</td>
+                	<td>Black</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="41/">Jonathan Chiquillo</a></td>
+                	<td>2010-05-27</td>
+                	<td>9600 Villamain</td>
+                	<td>Stabbed</td>
+                	<td>18</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="1/">Floy Nunley</a></td>
+                	<td>2010-01-05</td>
+                	<td>406 Saxon</td>
+                	<td>Homicidal Violence</td>
+                	<td>83</td>
+                	<td>White</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="5/">Michael Sacripante</a></td>
+                	<td>2010-01-11</td>
+                	<td>401 Blue Star</td>
+                	<td>Homicidal Violence</td>
+                	<td>23</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="9/">Jarred Birden</a></td>
+                	<td>2010-01-25</td>
+                	<td>4032 E Southcross</td>
+                	<td>Shot</td>
+                	<td>19</td>
+                	<td>Black</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="77/">Guadalupe Rolando Valenzuela</a></td>
+                	<td>2010-10-19</td>
+                	<td>4855 Castle Path</td>
+                	<td>Shot</td>
+                	<td>28</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="76/">Douglas Sanford</a></td>
+                	<td>2010-10-10</td>
+                	<td>4200 Old Seguin Road</td>
+                	<td>Shot</td>
+                	<td>27</td>
+                	<td>Black</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="75/">David McCutchen</a></td>
+                	<td>2010-09-28</td>
+                	<td>4621 Rittiman</td>
+                	<td>Shot</td>
+                	<td>34</td>
+                	<td>White</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="74/">Christopher Rodriguez</a></td>
+                	<td>2010-09-26</td>
+                	<td>210 Belden</td>
+                	<td>Shot</td>
+                	<td>22</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="73/">Pedro Hernandez</a></td>
+                	<td>2010-09-26</td>
+                	<td>11705 Hwy 16 S</td>
+                	<td>Shot</td>
+                	<td>49</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="72/">Sergio Lopez</a></td>
+                	<td>2010-09-18</td>
+                	<td>3014 Roosevelt</td>
+                	<td>Beaten</td>
+                	<td>23</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="71/">Monica Barron</a></td>
+                	<td>2010-09-16</td>
+                	<td>4700 Stringfellow St Apt. 1105</td>
+                	<td>Stabbed</td>
+                	<td>27</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="70/">Mark Menchaca</a></td>
+                	<td>2010-09-10</td>
+                	<td>4848 Goldfield Drive</td>
+                	<td>Shot</td>
+                	<td>29</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="79/">Richard Ramos</a></td>
+                	<td>2010-10-21</td>
+                	<td>2100 Mission Verde</td>
+                	<td>Stabbed</td>
+                	<td>47</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	       
+            	<tr>
+                	<td><a href="78/">Eric Mendoza</a></td>
+                	<td>2010-10-21</td>
+                	<td>5000 Village Path</td>
+                	<td>Shot</td>
+                	<td>20</td>
+                	<td>Hispanic</td>
+            	</tr>
+        	
+        	</tbody>
+        </table>
+        <!--map code-->
+        <script type="text/javascript">
+            var map = L.map('map').setView([29.4467297, -98.5094801], 10);
+            var layer = new L.StamenTileLayer("toner-lite");
+
+            map.addLayer(layer);
+            var data = {
+              "type": "FeatureCollection",
+              "features": [
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Roland Garcia",
+                    "id": "24"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.626209, 29.415741]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Cassandra Watkins",
+                    "id": "25"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.503285, 29.524004]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Janet Tribolet",
+                    "id": "26"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.4895103, 29.4584104]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Charles G. Tribolet",
+                    "id": "27"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.4895103, 29.4584104]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Tony Duncan",
+                    "id": "20"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.5561364, 29.4985111]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "David Valdez Jr.",
+                    "id": "21"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.5430757, 29.445995]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Manuel Guzman",
+                    "id": "22"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.4857553, 29.3702141]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Cesar L. Rodriguez",
+                    "id": "23"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.497225, 29.487323]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Ralph Weaverling",
+                    "id": "28"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.486504, 29.441377]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Johnny Trevino",
+                    "id": "29"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.542961, 29.467521]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Ethan Owen",
+                    "id": "4"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-97.7636978, 30.1981226]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Samuel Johnson Jr",
+                    "id": "8"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.464641, 29.418958]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Jerrmiah Estabrook",
+                    "id": "59"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.6124956, 29.3747025]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Jeffrey Monroe",
+                    "id": "58"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.524054, 29.600872]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Jimmy Escoto",
+                    "id": "55"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.60334, 29.347164]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Jeremy Garza",
+                    "id": "54"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.506325, 29.511222]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Heather Monroe",
+                    "id": "57"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.524054, 29.600872]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Arthur DeBaun",
+                    "id": "56"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.524054, 29.600872]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Khristopher Jones",
+                    "id": "51"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.5976866, 29.5075084]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Iris Mejia",
+                    "id": "50"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.6291784, 29.4055615]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Lenora Frago",
+                    "id": "53"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.5128324, 29.5531927]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Carlos Lopez",
+                    "id": "52"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.550731, 29.345853]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Jesus Hernandez",
+                    "id": "88"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.426734, 29.40822]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Troy Skidmore",
+                    "id": "89"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.3852583, 29.4922035]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Holden Resendez",
+                    "id": "82"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.461101, 29.6023412]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Ryan Christopher Jones",
+                    "id": "83"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.647559, 29.515193]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Rene Zapata",
+                    "id": "80"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.488376, 29.343554]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Liliana Trevino",
+                    "id": "81"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.701239, 29.429069]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Ernesto Sanchez",
+                    "id": "86"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.4976743, 29.4406664]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Ofelia Alvarado",
+                    "id": "87"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.441839, 29.394904]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Jesus Rosales",
+                    "id": "84"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.518572, 29.351366]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Jasmine Sharda Whipple",
+                    "id": "85"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.448345, 29.421964]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Jose Contreras",
+                    "id": "3"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.391345, 29.5465809]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Jose Anselmo Gomez",
+                    "id": "7"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.6246295, 29.4297427]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Jose Barea-Torres",
+                    "id": "39"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.5731756, 29.4722874]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Jason Medina",
+                    "id": "38"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.4483728, 29.4875247]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Vanessa Marie Pitts",
+                    "id": "33"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.6292324, 29.4032315]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Jose Flores",
+                    "id": "32"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.5615717, 29.4143406]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Jasmayne McCullough",
+                    "id": "31"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.55358, 29.507915]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Felipe Mendiola",
+                    "id": "30"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.5255449, 29.468524]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Jeffrey Safrin",
+                    "id": "37"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.586819, 29.502675]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Dominique Smith",
+                    "id": "36"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.400393, 29.4193212]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Valerie Cantu",
+                    "id": "35"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.518289, 29.4063008]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Deante Walker",
+                    "id": "34"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.43957, 29.362198]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Christopher Jackson",
+                    "id": "60"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.450744, 29.485138]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Juan Duran",
+                    "id": "61"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.6292006, 29.4097332]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Diana Conde",
+                    "id": "62"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.5655041, 29.3538368]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Johnny Garza",
+                    "id": "63"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.464611, 29.431718]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Emerald Rodriguez",
+                    "id": "64"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.5430622, 29.4157553]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Andrew Ramirez",
+                    "id": "65"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.472071, 29.434382]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Manuel Camarillo",
+                    "id": "66"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.472071, 29.434382]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Dannilyn Lopez",
+                    "id": "67"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.626019, 29.428071]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Jesse Cortez (didn&#39;t write about)",
+                    "id": "68"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.548104, 29.4417144]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Cesar Rosa-Gonzalez",
+                    "id": "69"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.509561, 29.336475]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Jayda De La Rosa",
+                    "id": "2"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.5254115, 29.4452769]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Santos Sanchez",
+                    "id": "6"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.5236271, 29.3565695]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Jesse Ramirez",
+                    "id": "99"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.533731, 29.494318]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Steven Wolfe",
+                    "id": "98"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.4807718, 29.5642908]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Alexander Schug",
+                    "id": "91"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.405518, 29.530381]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Derek Lopez",
+                    "id": "90"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.668912, 29.438555]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Bernardo Santoya",
+                    "id": "93"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.5117837, 29.4129726]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Ivan Gaines",
+                    "id": "92"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.384744, 29.490306]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Andres Soltero",
+                    "id": "95"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.3683407, 29.5586121]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Jose Reyes",
+                    "id": "94"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.6465079, 29.4774656]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Ethan Hector Altamirano",
+                    "id": "97"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.584408, 29.446614]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Grace Guerra",
+                    "id": "96"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.605893, 29.464908]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Guillermo Garcia",
+                    "id": "11"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.5072388, 29.4922264]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Jose luis Garcia",
+                    "id": "10"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.5072388, 29.4922264]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Danny A. Thomas",
+                    "id": "13"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.418432, 29.5232574]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Yvette Ibarra",
+                    "id": "12"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.609109, 29.458361]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Bernabe Maldonado",
+                    "id": "15"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.5746456, 29.4708098]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Apolonio Pacheco",
+                    "id": "14"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.5768494, 29.5541251]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Pedro Antonio Salgado Jr",
+                    "id": "17"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.642695, 29.400902]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Adam Thomas",
+                    "id": "16"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.6329104, 29.4046536]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Alvin Brown",
+                    "id": "19"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.456228, 29.407219]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Troy Clattenburg",
+                    "id": "18"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.5200349, 29.581054]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Domingo Berlanga",
+                    "id": "48"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.5120987, 29.4214031]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Iesha Lawhorne",
+                    "id": "49"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.5940951, 29.4857979]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Paul Stout",
+                    "id": "46"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.6401502, 29.5236069]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Robert Bonnett",
+                    "id": "47"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.468757, 29.452243]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Faith Escamilla",
+                    "id": "44"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.506325, 29.511222]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Janice Maier",
+                    "id": "45"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.3790267, 29.5736215]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Mario Alfonso Rodriguez Jr",
+                    "id": "42"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.6451673, 29.3238887]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Pedro Garcia",
+                    "id": "43"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.5022259, 29.528478]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Ramiya Dawson",
+                    "id": "40"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.467604, 29.453342]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Jonathan Chiquillo",
+                    "id": "41"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.444838, 29.324092]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Floy Nunley",
+                    "id": "1"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.528267, 29.499795]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Michael Sacripante",
+                    "id": "5"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.4910696, 29.4042801]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Jarred Birden",
+                    "id": "9"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.4519912, 29.375366]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Guadalupe Rolando Valenzuela",
+                    "id": "77"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.3788166, 29.4903156]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Douglas Sanford",
+                    "id": "76"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.403438, 29.4600872]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "David McCutchen",
+                    "id": "75"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.401152, 29.484562]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Christopher Rodriguez",
+                    "id": "74"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.493461, 29.369415]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Pedro Hernandez",
+                    "id": "73"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.568374, 29.307602]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Sergio Lopez",
+                    "id": "72"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.4809731, 29.3682473]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Monica Barron",
+                    "id": "71"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.43429, 29.378414]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Mark Menchaca",
+                    "id": "70"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.4936282, 29.4241219]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Richard Ramos",
+                    "id": "79"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.4429236, 29.3346651]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "full_name": "Eric Mendoza",
+                    "id": "78"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [-98.3920011, 29.4920209]
+                  }
+                }
+                
+              ]
+            };
+
+            console.log(data);
+			
+			var geojsonMarkerOptions = {
+    			radius: 7,
+    			fillColor: "#ff6600",
+    			color: "#000",
+    			weight: 1,
+   				opacity: 1,
+    			fillOpacity: 0.8
+			};
+			
+			var dataLayer = L.geoJson(data, {
+                pointToLayer: function (feature, latlng) {
+        			return L.circleMarker(latlng, geojsonMarkerOptions);
+        		},
+                onEachFeature: function(feature, layer) {
+                    layer.bindPopup(
+                        '<a href="' + feature.properties.id + '/">' +
+                            feature.properties.full_name +
+                        '</a>'
+                    );
+                }
+            });
+
+            console.log(dataLayer);
+            map.addLayer(dataLayer);
+        </script>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <!--Built with the help, both witting and unwitting, of the kind folks on The Los Angeles Times' data desk-->
+    </div>
+    </body>
+</html>
