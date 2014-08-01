@@ -1,6 +1,9 @@
 /data/*
 /data
 
+config.py
+
 .DS_Store
 geocoder_gspread.py
 *.pyc
+
