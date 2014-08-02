@@ -147,7 +147,7 @@
 	</body>
         <!--map code-->
         <script type="text/javascript">
-            var map = L.map('map').setView([29.4467297, -98.5094801], 10);
+            var map = L.map('map', {scrollWheelZoom: false}).setView([29.4467297, -98.5094801], 10);
             var layer = new L.StamenTileLayer("toner-lite");
 
             map.addLayer(layer);
