@@ -161,7 +161,7 @@
     	</div>	
 	<!--leafet code-->
 		<script type="text/javascript">
-            var map = L.map('map').setView([{{ object.Y }}, {{ object.X }}], 15);
+            var map = L.map('map',{scrollWheelZoom: false}).setView([{{ object.Y }}, {{ object.X }}], 15);
             var layer = new L.StamenTileLayer("toner-lite");
             var myIcon = L.icon({
    				iconUrl: '{{ url_for('static', filename='css/images/map-pin.png') }}',
