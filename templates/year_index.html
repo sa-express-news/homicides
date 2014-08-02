@@ -49,49 +49,49 @@
         	<div class="nav-tophat">
           		<ul class="nav navbar-nav">
 					<li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search by year<span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="/2007">2007</a></li>
-                <li><a href="/2008">2008</a></li>
-                <li><a href="/2009">2009</a></li>
-                <li><a href="/2010">2010</a></li>
-                <li><a href="/2011">2011</a></li>
-                <li><a href="/2012">2012</a></li>
-                <li><a href="/2013">2013</a></li>
-                <!-- <li><a href="/2014">2014</a></li> -->
-              </ul>
-            </li>            
+              		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Search by year<span class="caret"></span></a>
+              			<ul class="dropdown-menu" role="menu">
+                		<li id="nav-home-li"><a href="/">Home</a></li>
+                		<li><a href="/2007">2007</a></li>
+                		<li><a href="/2008">2008</a></li>
+                		<li><a href="/2009">2009</a></li>
+                		<li><a href="/2010">2010</a></li>
+                		<li><a href="/2011">2011</a></li>
+                		<li><a href="/2012">2012</a></li>
+                		<li><a href="/2013">2013</a></li>
+                		<!-- <li><a href="/2014">2014</a></li> -->
+              		</ul>
+            		</li>            
                     <li>
-                        <a href="http://www.mysanantonio.com/news/local/">Local</a>
+                        <a href="http://www.expressnews.com/news/local/">Local</a>
                     </li>
                     <li>
-                        <a href="http://www.mysanantonio.com/news/politics/">Politics</a>
-                    </li>   
-                    <li>
-                        <a href="http://www.mysanantonio.com/news/us-world/">U.S. & World</a>                           
+                        <a href="http://www.expressnews.com/news/us-world/">U.S. & World</a>                           
                     </li>
                     <li>
-                        <a href="http://www.mysanantonio.com/opinion/">Opinion</a>                          
+                        <a href="http://www.expressnews.com/opinion/">Opinion</a>                          
                     </li>
                     <li>
-                        <a href="http://www.mysanantonio.com/business/">Business</a>                            
+                        <a href="http://www.expressnews.com/business/">Business</a>                            
                     </li>
                     <li>
-                        <a href="http://www.mysanantonio.com/sports/">Sports</a>                            
+                        <a href="http://www.expressnews.com/sports/">Sports</a>                            
                     </li>
                     <li>
-                        <a href="http://www.mysanantonio.com/entertainment/">Life & Arts</a>                           
+                        <a href="http://www.expressnews.com/entertainment/">Arts</a>                           
+                    </li>
+                    <li>
+                    	<a href="http://www.expressnews.com/lifestyle/">Life</a>
                     </li>
 
-          </ul>
+          		</ul>
         </div><!--/nav-tophat-->
         </div><!--/.nav-collapse -->
       </div>
     </div>
     <!--end navigation block-->
-    <div class="main-body">      
-        <div id="map" style="width:100%; height:350px;"></div>
-    	<div class="yearindex-page">
+    <div id="map" style="width:100%; height:350px;"></div>
+    <div class="yearindex-page">
         	<h1>San Antonio Homicides: {{ object_list[0].app_year }} </h1> 
         	<!--Subhead and chatter will go here with H2 or H3 styling-->
         	<p>
@@ -125,25 +125,26 @@
     	<div class="footer">
     		<div class="container">
     			<a class="footer-logo" href="http://expressnews.com"></a>
+    			<div class="navbar-collapse collapse">
     			<div  class="footer-tophat">
-    				<div class="navbar-collapse collapse">
-        				<ul>
-        					<li>
-        					<a href="https://myaccount.expressnews.com/dssSubscribe.aspx?PID=248&z=00000&verifyemail=true">Subscribe</a>
-        					</li>
-        					<li><a href="http://www.expressnews.com/newsroom_contacts/">Newsroom Contacts</a>
-        					</li>
-        					<li><a href="http://www.expressnews.com/terms_of_use/">Terms of Use</a>
-        					</li>
-        					<li><a href="http://hearstmediasanantonio.com/">Advertise</a>
-        					</li>
-        					<li>&copy; 2014
-        					</li>
-        				</ul>
-        			</div>
+        			<ul>
+        				<li>
+        				<a href="https://myaccount.expressnews.com/dssSubscribe.aspx?PID=248&z=00000&verifyemail=true">Subscribe</a>
+        				</li>
+        				<li id="footer-links"><a href="http://www.expressnews.com/newsroom_contacts/">Newsroom Contacts</a>
+        				</li>
+        				<li id="footer-links"><a href="http://www.expressnews.com/terms_of_use/">Terms of Use</a>
+        				</li>
+        				<li id="footer-links"><a href="http://hearstmediasanantonio.com/">Advertise</a>
+        				</li>
+        				<li>&copy; 2014
+        				</li>
+        			</ul>
+        		</div>
         		</div>
         	</div>
     	</div>
+	</body>
         <!--map code-->
         <script type="text/javascript">
             var map = L.map('map').setView([29.4467297, -98.5094801], 10);
@@ -200,6 +201,4 @@
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
         <!--Built with the help, both witting and unwitting, of the kind folks on The Los Angeles Times' data desk-->
-    </div>
-    </body>
 </html>

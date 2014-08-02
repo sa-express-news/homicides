@@ -1,6 +1,12 @@
 /*basics*/
+html {
+	padding: 0;
+}
+
 body {
 	padding-top: 50px;
+	padding-bottom: 0;
+	margin: 0;
 }
 
 /*navigation*/
@@ -11,6 +17,10 @@ body {
 	text-transform: uppercase;
 	display: inline;
 	}
+
+#nav-home-li {
+	text-transform: none;
+}
 
 /*unused css for navigation*/
 nav {
@@ -270,15 +280,17 @@ table {
 	
 /*footer*/
 .footer {
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  height: 50px;
-  background-color: #282828;
-  padding-left: 15px;
-  padding-right: 15px;
-  max-height: 50px;
-	line-height: 50px;
+  	position: relative;
+  	bottom: 0;
+  	width: 100%;
+  	height: 50px;
+  	background-color: #282828;
+  	padding-left: 15px;
+  	padding-right: 15px;
+	padding-bottom: 0px;
+  	margin-bottom: 0px;
+  	min-height: 50px;
+  	vertical-align: middle;
 }
 
 .footer-logo {
@@ -293,38 +305,29 @@ table {
 }
 
 .footer-tophat {
+	display: table-cell;
 	float: left;
 	width: 85%;
 	color: #FFFFFF;
 	font-family: Arial, sans-serif;
 	font-size: 11px;
 	text-transform: uppercase;
-	display: inline;
-	bottom: 0;
-	max-height: 50px;
+	min-height: 50px;
+	vertical-align: middle;
+	line-height: 50px;
 	}
 
-.footer p {
-	margin:0;
-	}
-
-.footer ul {
+.footer ul li {
 	display: block;
 	position: static;
 	width: auto;
-	margin-left: 0;
+	margin-left: 20px;
+	margin-right: 20px;
 	margin-bottom: 0;
 	padding: 0;
 	float: left;
-	}
-
-.footer li {
-	list-style-type: none;
-	margin: 0;
-	padding-left: 16px;
-	padding-right: 16px;
-	display: inline-table;
 	vertical-align: middle;
+	height: 50px;
 	}
 
 .footer a {

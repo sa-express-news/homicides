@@ -20,9 +20,8 @@
     	<![endif]-->   
     </head>
 	<body class="detail-page">
-    	<!--navigation-->
-    <!-- Fixed navbar -->
-            <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <!--navigation-->
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container">
         	<div class="navbar-header">
           		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -31,52 +30,53 @@
             		<span class="icon-bar"></span>
             		<span class="icon-bar"></span>
           		</button>
-          		<a class="navbar-brand" href="#"></a>
+          		<a class="navbar-brand" href="http://expressnews.com"></a>
         	</div>
         	<div class="navbar-collapse collapse">
         	<div class="nav-tophat">
           		<ul class="nav navbar-nav">
 					<li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search by year<span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="/2007">2007</a></li>
-                <li><a href="/2008">2008</a></li>
-                <li><a href="/2009">2009</a></li>
-                <li><a href="/2010">2010</a></li>
-                <li><a href="/2011">2011</a></li>
-                <li><a href="/2012">2012</a></li>
-                <li><a href="/2013">2013</a></li>
-                <li><a href="/2014">2014</a></li>
-              </ul>
-            </li>            
+              		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Search by year<span class="caret"></span></a>
+              			<ul class="dropdown-menu" role="menu">
+                		<li id="nav-home-li"><a href="/">Home</a></li>
+                		<li><a href="/2007">2007</a></li>
+                		<li><a href="/2008">2008</a></li>
+                		<li><a href="/2009">2009</a></li>
+                		<li><a href="/2010">2010</a></li>
+                		<li><a href="/2011">2011</a></li>
+                		<li><a href="/2012">2012</a></li>
+                		<li><a href="/2013">2013</a></li>
+                		<!-- <li><a href="/2014">2014</a></li> -->
+              		</ul>
+            		</li>            
                     <li>
-                        <a href="http://www.mysanantonio.com/news/local/">Local</a>
+                        <a href="http://www.expressnews.com/news/local/">Local</a>
                     </li>
                     <li>
-                        <a href="http://www.mysanantonio.com/news/politics/">Politics</a>
-                    </li>   
-                    <li>
-                        <a href="http://www.mysanantonio.com/news/us-world/">U.S. & World</a>                           
+                        <a href="http://www.expressnews.com/news/us-world/">U.S. & World</a>                           
                     </li>
                     <li>
-                        <a href="http://www.mysanantonio.com/opinion/">Opinion</a>                          
+                        <a href="http://www.expressnews.com/opinion/">Opinion</a>                          
                     </li>
                     <li>
-                        <a href="http://www.mysanantonio.com/business/">Business</a>                            
+                        <a href="http://www.expressnews.com/business/">Business</a>                            
                     </li>
                     <li>
-                        <a href="http://www.mysanantonio.com/sports/">Sports</a>                            
+                        <a href="http://www.expressnews.com/sports/">Sports</a>                            
                     </li>
                     <li>
-                        <a href="http://www.mysanantonio.com/entertainment/">Life & Arts</a>                           
+                        <a href="http://www.expressnews.com/entertainment/">Arts</a>                           
+                    </li>
+                    <li>
+                    	<a href="http://www.expressnews.com/lifestyle/">Life</a>
                     </li>
 
-          </ul>
+          		</ul>
         </div><!--/nav-tophat-->
         </div><!--/.nav-collapse -->
       </div>
     </div>
-	<!--end navigation block-->
+    <!--end navigation block-->
     <!--splash image goes here-->
     <div class="splash-container">
         <img id="splash-image" src="{{ url_for('static', filename = 'images/splashmain-use.jpg') }}" alt="This is a photo from a SAPD crime scene, where police were investigating a suspected homicide in 2012" />
