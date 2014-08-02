@@ -1,5 +1,7 @@
 /*basics*/
-
+body {
+	padding-top: 50px;
+}
 
 /*navigation*/
 .nav-tophat {
@@ -162,7 +164,6 @@ nav {
 	
 /*yearindex page*/
 .yearindex-page {
-	padding-top: 40px;
 	margin: 0;
 	margin-left: 1.5%;
 	margin-right: 1.5%;
@@ -265,4 +266,67 @@ table {
 .byline ul {
 	list-style-type: square;
 	margin-left: 1.5%;
+	}
+	
+/*footer*/
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #282828;
+  padding-left: 15px;
+  padding-right: 15px;
+  max-height: 50px;
+	line-height: 50px;
+}
+
+.footer-logo {
+	display: block;
+	min-width: 50px;
+	height: 50px;
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-image: url(images/footer-logo.png);
+	float: left;
+	margin-right: 20px;
+}
+
+.footer-tophat {
+	float: left;
+	width: 85%;
+	color: #FFFFFF;
+	font-family: Arial, sans-serif;
+	font-size: 11px;
+	text-transform: uppercase;
+	display: inline;
+	bottom: 0;
+	max-height: 50px;
+	}
+
+.footer p {
+	margin:0;
+	}
+
+.footer ul {
+	display: block;
+	position: static;
+	width: auto;
+	margin-left: 0;
+	margin-bottom: 0;
+	padding: 0;
+	float: left;
+	}
+
+.footer li {
+	list-style-type: none;
+	margin: 0;
+	padding-left: 16px;
+	padding-right: 16px;
+	display: inline-table;
+	vertical-align: middle;
+	}
+
+.footer a {
+	color:FFFFFF; 
 	}

@@ -32,7 +32,7 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->   
     </head>
-    <body class="yearindex-page">
+    <body>
         <!--navigation-->
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container">
@@ -43,7 +43,7 @@
             		<span class="icon-bar"></span>
             		<span class="icon-bar"></span>
           		</button>
-          		<a class="navbar-brand" href="#"></a>
+          		<a class="navbar-brand" href="http://expressnews.com"></a>
         	</div>
         	<div class="navbar-collapse collapse">
         	<div class="nav-tophat">
@@ -58,7 +58,7 @@
                 <li><a href="/2011">2011</a></li>
                 <li><a href="/2012">2012</a></li>
                 <li><a href="/2013">2013</a></li>
-                <li><a href="/2014">2014</a></li>
+                <!-- <li><a href="/2014">2014</a></li> -->
               </ul>
             </li>            
                     <li>
@@ -89,37 +89,61 @@
       </div>
     </div>
     <!--end navigation block-->
-        <div class="main-body">      
-        <h1>San Antonio Homicides: {{ object_list[0].app_year }} </h1>
-        
-        <!--Subhead and chatter will go here with H2 or H3 styling-->
+    <div class="main-body">      
         <div id="map" style="width:100%; height:350px;"></div>
-        <p>
-        <p>
-        <table id="example" class="display">
-        	<thead>    
-            	<tr>
-                	<th>Name</th>
-                	<th>Date</th>
-                	<th>Address</th>
-                	<th>Cause of Death</th>
-                	<th>Age</th>
-                	<th>Race/Ethnicity</th>
-            	</tr>
-            </thead>
-            <tbody>
-        	{% for obj in object_list %}       
-            	<tr>
-                	<td><a href="{{ obj.HomicideNbr }}/">{{ obj.onlineName }}</a></td>
-                	<td>{{ obj.IncidentDate }}</td>
-                	<td>{{ obj.SapdADDRESS }}</td>
-                	<td>{{ obj.METHOD|title }}</td>
-                	<td>{{ obj.enAgeCalc }}</td>
-                	<td>{{ obj.Race }}</td>
-            	</tr>
-        	{% endfor %}
-        	</tbody>
-        </table>
+    	<div class="yearindex-page">
+        	<h1>San Antonio Homicides: {{ object_list[0].app_year }} </h1> 
+        	<!--Subhead and chatter will go here with H2 or H3 styling-->
+        	<p>
+        	<p>
+        	<table id="example" class="display">
+        		<thead>    
+            		<tr>
+                		<th>Name</th>
+                		<th>Date</th>
+                		<th>Address</th>
+                		<th>Cause of Death</th>
+                		<th>Age</th>
+                		<th>Race/Ethnicity</th>
+            		</tr>
+            	</thead>
+            	<tbody>
+        		{% for obj in object_list %}       
+            		<tr>
+                		<td><a href="{{ obj.HomicideNbr }}/">{{ obj.onlineName }}</a></td>
+                		<td>{{ obj.IncidentDate }}</td>
+                		<td>{{ obj.SapdADDRESS }}</td>
+                		<td>{{ obj.METHOD|title }}</td>
+                		<td>{{ obj.enAgeCalc }}</td>
+                		<td>{{ obj.Race }}</td>
+            		</tr>
+        		{% endfor %}
+        		</tbody>
+        	</table>
+        </div>
+        <!--footer-->
+    	<div class="footer">
+    		<div class="container">
+    			<a class="footer-logo" href="http://expressnews.com"></a>
+    			<div  class="footer-tophat">
+    				<div class="navbar-collapse collapse">
+        				<ul>
+        					<li>
+        					<a href="https://myaccount.expressnews.com/dssSubscribe.aspx?PID=248&z=00000&verifyemail=true">Subscribe</a>
+        					</li>
+        					<li><a href="http://www.expressnews.com/newsroom_contacts/">Newsroom Contacts</a>
+        					</li>
+        					<li><a href="http://www.expressnews.com/terms_of_use/">Terms of Use</a>
+        					</li>
+        					<li><a href="http://hearstmediasanantonio.com/">Advertise</a>
+        					</li>
+        					<li>&copy; 2014
+        					</li>
+        				</ul>
+        			</div>
+        		</div>
+        	</div>
+    	</div>
         <!--map code-->
         <script type="text/javascript">
             var map = L.map('map').setView([29.4467297, -98.5094801], 10);
