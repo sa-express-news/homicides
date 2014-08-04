@@ -1,11 +1,29 @@
 import csv
 import os
-#import gspread
+import gspread
 from itertools import groupby
 from flask import Flask
 from flask import render_template
 
 app = Flask(__name__)
+app.config.from_object('config')
+
+output_csv = open("./static/master.csv","wb")
+output = csv.writer(output_csv, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+
+gc = gspread.login(app.config['GOOGLE_U_NAME'], app.config['GOOGLE_ONETIME_PASS'])
+
+all_sheets = gc.open("CrimeTeamHomicideFinalDatabase_working")
+
+sheet = all_sheets.worksheet("master")
+
+raw_sheet = sheet.get_all_values()
+
+for row in raw_sheet:
+    new_row = list(map((lambda x: x.encode('ascii', 'ignore').replace('\n', ' ').replace('\r', '')), row))
+    output.writerow(new_row)
+
+output_csv.close()
 
 csv_path = './static/master.csv'
 

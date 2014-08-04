@@ -1,6 +1,6 @@
 /data/*
 /data
-
+/build/
 config.py
 
 .DS_Store
