@@ -172,7 +172,7 @@
     	</div>	
 	<!--leafet code-->
 		<script type="text/javascript">
-            var map = L.map('map',{scrollWheelZoom: false}).setView([{{ object.Y }}, {{ object.X }}], 15);
+            var map = L.map('map',{scrollWheelZoom: false}).setView([{{ object.lat }}, {{ object.long }}], 15);
             var layer = new L.StamenTileLayer("toner-lite");
             var myIcon = L.icon({
    				iconUrl: '{{ url_for('static', filename='css/images/map-pin.png') }}',
@@ -180,7 +180,7 @@
     			popupAnchor: [-3, -76],
 			});
             map.addLayer(layer);
-            var marker = L.marker([{{ object.Y }}, {{ object.X }}], {icon: myIcon}).addTo(map);
+            var marker = L.marker([{{ object.lat }}, {{ object.long }}], {icon: myIcon}).addTo(map);
         </script>
     <!--end leaflet code-->
 	<!--dropdown menu code-->	
