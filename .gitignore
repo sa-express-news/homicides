@@ -1,9 +1,10 @@
 /data/*
 /data
 /build
+static/master.csv
+
 config.py
 
 .DS_Store
 geocoder_gspread.py
 *.pyc
-
