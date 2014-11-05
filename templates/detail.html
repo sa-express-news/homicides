@@ -124,8 +124,8 @@
 				<div class = "info-container">
 					<!--main story-->
 					<div class = "story-container">
-						<div class = "story"> {{ object.Story_Nut }} Story will go here</div>
-						<div class = "story-byline"> {{ object.Story_Byline }}Byline will go here, {{ object.Story_Credit }} </div>
+						<div class = "story"> {{ object.published_story_html|safe }}</div>
+						<div class = "story-byline"> {{ object.byline|safe }} {{ object.pub_date|safe }} </div>
 					</div>
 					<p>
 					<!--factbox-->
