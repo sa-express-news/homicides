@@ -119,14 +119,15 @@
 			<div class="info-body">
 				<div class = "headline">
 					<h1>{{ object.onlineName }}, {{ object.enAgeCalc }}</h1>
+                    <div class = "story-byline">{{ object.pub_date|safe }} </div>
 				</div>
 				<!--share buttons will go here-->
 				<div class = "info-container">
 					<!--main story-->
 					<div class = "story-container">
 						<div class = "story"> {{ object.published_story_html|safe }}</div>
-						<div class = "story-byline"> {{ object.byline|safe }} {{ object.pub_date|safe }} </div>
-					</div>
+                        <div id="data_desk_email">Information, praise, comments or concerns, please email: datadesk@express-news.net</div>
+                    </div>
 					<p>
 					<!--factbox-->
 					<div class = "factbox-container">
@@ -138,7 +139,7 @@
 							<p>{{ object.enAddress }}</li>
 							<li><strong>Age:</strong> {{ object.enAgeCalc }}</li> 
 							<li><strong>Race:</strong> {{ object.Race }}</li>
-							<li><strong>Gender:</strong> {{ object.Gender }}</li>							
+							<li><strong>Gender:</strong> {{ object.Gender }}</li>		
 						</ul>
 					</div>
 					</div>
