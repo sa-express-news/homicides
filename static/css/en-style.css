@@ -1,5 +1,6 @@
 /*basics*/
-html {
+
+{
 	padding: 0;
 }
 
@@ -231,6 +232,8 @@ table {
 	margin-left: 2%;
 	text-align: left;
 	font-family: "Georgia", serif;
+	height:auto;
+	margin-bottom: 50px;
 	}
 
 .headline {
@@ -293,7 +296,7 @@ table {
 	}
 	
 /*footer*/
-.footer {
+footer {
   	position: relative;
   	bottom: 0;
   	width: 100%;
@@ -301,10 +304,6 @@ table {
   	background-color: #282828;
   	padding-left: 15px;
   	padding-right: 15px;
-	padding-bottom: 0px;
-  	margin-bottom: 0px;
-  	min-height: 50px;
-  	vertical-align: middle;
 }
 
 .footer-logo {
