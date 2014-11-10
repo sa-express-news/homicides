@@ -20,7 +20,7 @@
         	<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.0/js/jquery.dataTables.js"></script>
         	<script type="text/javascript" class="init">
         		$(document).ready( function () {
-    				$('#example').DataTable( {
+    				$('#year-index-table ').DataTable( {
     					paging: false
     				} );
 				} );
@@ -46,7 +46,6 @@
     <body>
         <!--navigation-->
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-		<div class="container">
         	<div class="navbar-header">
           		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             		<span class="sr-only">Toggle navigation</span>
@@ -98,16 +97,12 @@
           		</ul>
         </div><!--/nav-tophat-->
         </div><!--/.nav-collapse -->
-      </div>
     </div>
     <!--end navigation block-->
     <div id="map" style="width:100%; height:350px;"></div>
-    <div class="yearindex-page">
         	<h1>San Antonio Homicides: {{ object_list[0].app_year }} </h1> 
         	<!--Subhead and chatter will go here with H2 or H3 styling-->
-        	<p>
-        	<p>
-        	<table id="example" class="display">
+        	<table id="year-index-table" class="display">
         		<thead>    
             		<tr>
                 		<th>Name</th>
@@ -131,30 +126,28 @@
         		{% endfor %}
         		</tbody>
         	</table>
+            <div class="data_desk_email">Information, praise, comments or concerns, please email: datadesk@express-news.net</div>
         </div>
         <!--footer-->
-    	<div class="footer">
-    		<div class="container">
-    			<a class="footer-logo" href="http://expressnews.com"></a>
-    			<div class="navbar-collapse collapse">
-    			<div  class="footer-tophat">
-        			<ul>
-        				<li>
-        				<a href="https://myaccount.expressnews.com/dssSubscribe.aspx?PID=248&z=00000&verifyemail=true">Subscribe</a>
-        				</li>
-        				<li id="footer-links"><a href="http://www.expressnews.com/newsroom_contacts/">Newsroom Contacts</a>
-        				</li>
-        				<li id="footer-links"><a href="http://www.expressnews.com/terms_of_use/">Terms of Use</a>
-        				</li>
-        				<li id="footer-links"><a href="http://hearstmediasanantonio.com/">Advertise</a>
-        				</li>
-        				<li>&copy; 2014
-        				</li>
-        			</ul>
-        		</div>
-        		</div>
-        	</div>
-    	</div>
+    <footer class="footer navbar-fixed-bottom">
+            <a class="footer-logo" href="http://expressnews.com"></a>
+            <div class="navbar-collapse collapse">
+            <div  class="footer-tophat">
+                <ul>
+                    <li>
+                    <a href="https://myaccount.expressnews.com/dssSubscribe.aspx?PID=248&z=00000&verifyemail=true">Subscribe</a>
+                    </li>
+                    <li id="footer-links"><a href="http://www.expressnews.com/newsroom_contacts/">Newsroom Contacts</a>
+                    </li>
+                    <li id="footer-links"><a href="http://www.expressnews.com/terms_of_use/">Terms of Use</a>
+                    </li>
+                    <li id="footer-links"><a href="http://hearstmediasanantonio.com/">Advertise</a>
+                    </li>
+                    <li>&copy; 2014
+                    </li>
+                </ul>
+            </div>
+    </footer>
 	</body>
         <!--map code-->
         <script type="text/javascript">
