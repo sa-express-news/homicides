@@ -188,21 +188,18 @@ nav {
 }
 	
 /*yearindex page*/
-.yearindex-page {
+/*.yearindex-page {
 	margin: 0;
 	margin-left: 1.5%;
 	margin-right: 1.5%;
-	}
+	}*/
 
 table {
 	font-size: 12px;
 	}
 
 /*detail page*/
-.detail-page {
-	padding-top: 50px;
-	margin: 0;
-	}
+
 	
 .detail-mainbody {
  	margin-left: auto;
@@ -232,7 +229,6 @@ table {
 	margin-left: 2%;
 	text-align: left;
 	font-family: "Georgia", serif;
-	height:auto;
 	margin-bottom: 50px;
 	}
 
@@ -247,6 +243,7 @@ table {
 	position: relative;
 	float: left;
 	width: 60%;
+	margin-bottom: 30px;
 	}
 
 /*factbox*/
@@ -295,7 +292,7 @@ table {
 	margin-left: 1.5%;
 	}
 
-#data_desk_email{
+.data_desk_email{
 	margin-top:1%;
 	font-style: italic;
 }
