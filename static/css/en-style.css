@@ -126,8 +126,8 @@ nav {
 	width: 100%;
 	padding-top: 1%;
 	padding-bottom: 1%;
-	margin-left: 2.5%;
-	margin-right: 2.5%;
+	padding-left: 2.5%;
+	padding-right: 2.5%;
 	text-align: center;
 	}
 	
@@ -298,10 +298,12 @@ table {
 
 .data_desk_email{
 	margin-top:1%;
+	margin-left: 3%;
 	font-style: italic;
 }
 	
 /*footer*/
+
 footer {
   	position: relative;
   	margin-top: 15px;
