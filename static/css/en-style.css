@@ -163,12 +163,12 @@ nav {
 	}
 
 
-#year {
+.year {
 	font-size: 48px;
 	line-height: 90%;
 }
 
-#homicidenumber {
+.homicidenumber {
 	padding-left: 0;
 	margin-left: 0;
 	font-size: 130px;
@@ -176,7 +176,7 @@ nav {
 	color: #B00000;
 }
 
-#homicide-chatter {
+.homicide-chatter {
 	font-size: 48px;
 	line-height: 100px;
 }
