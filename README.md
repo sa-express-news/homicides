@@ -1,3 +1,6 @@
-San Antonio Homicides: 2007
+San Antonio Homicides v 1.0
 ===========================
-Our first attempt to build an interactive application utilizing years of homicide data painstakingly kept by the Express-News' crime team. We're using the First-News-App template as the basis for this news application. The First-News-App lab, held at NICAR2014, was put on by Ben Welsh, Chase Davis and Derek Willis.
+An interactive archive of San Antonio homicides from 2007 - present.  Version 1.0 is a [Flask application](http://flask.pocoo.org/) powered by Google spreadsheets.  We took our inspiration from [The First News Apps Bootcamp](http://first-news-app.readthedocs.org/en/latest/) workshop at NICAR, 2014.  
+
+Bugs, suggestions, or just to chat: file an issue or message
+[ndhapple](https://github.com/ndhapple) or [jkokenge](https://github.com/jkokenge).  
