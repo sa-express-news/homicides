@@ -66,11 +66,15 @@ def detail(year, number):
         object = murders_by_year_grpd[year][number],
     )
 
+# @app.route('/sitemap.xml')
+# def sitemap():
+
+
 
 if __name__ == '__main__':
     app.run(
         host="0.0.0.0",
-        port=8003,
+        port=8006,
         use_reloader=True,
         debug=True,
     )
