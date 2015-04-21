@@ -67,14 +67,14 @@ def detail(year, number):
         object = murders_by_year_grpd[year][number],
     )
 
-@app.route('/sitemap.xml')
-def sitemap():
-    today = datetime.date.today().strftime("%Y-%m-%d") 
+#@app.route('/sitemap.xml')
+#def sitemap():
+#    today = datetime.date.today().strftime("%Y-%m-%d") 
 
-    return render_template('sitemap.xml', 
-        object = murders_by_year_grpd,
-        current_date = today,
-        )
+#    return render_template('sitemap.xml', 
+#        object = murders_by_year_grpd,
+#        current_date = today,
+#        )
 
 
 
