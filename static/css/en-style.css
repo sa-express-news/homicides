@@ -233,7 +233,7 @@ table {
 .info-body {
 	position: relative;
 	float: left;
-	width: 75%;
+	width: 80%;
 	margin-left: 2%;
 	text-align: left;
 	font-family: "Georgia", serif;
@@ -310,6 +310,9 @@ a.home-link-detail:link, a.home-link-detail:visited, a.home-link-detail:hover, a
 	text-decoration: none; 
 	color: black;
 }
+
+/*redesigned-article-template-css*/
+
 	
 /*footer*/
 
