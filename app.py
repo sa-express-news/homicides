@@ -1,17 +1,23 @@
 import csv
 import os
 import gspread
+import json
+import datetime
 from itertools import groupby
 from flask import Flask
 from flask import render_template
+from oauth2client.client import SignedJwtAssertionCredentials
 
 app = Flask(__name__)
-app.config.from_object('config')
+json_key = json.load(open('client_secret_718482799062-qgf2hev4ufdtkpgjfoh15kgbb5k9b3h1.apps.googleusercontent.com'))
+scope = ['https://spreadsheets.google.com/feeds']
+
+credentials = SignedJwtAssertionCredentials(json_key['client_email'], json_key['private_key'], scope)
+
+gc = gspread.authorize(credentials)
 
 output_csv = open("./static/master.csv","wb")
 output = csv.writer(output_csv, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-
-gc = gspread.login(app.config['GOOGLE_U_NAME'], app.config['GOOGLE_ONETIME_PASS'])
 
 all_sheets = gc.open("CrimeTeamHomicideFinalDatabase_working")
 
@@ -66,11 +72,21 @@ def detail(year, number):
         object = murders_by_year_grpd[year][number],
     )
 
+#@app.route('/sitemap.xml')
+#def sitemap():
+#    today = datetime.date.today().strftime("%Y-%m-%d") 
+
+#    return render_template('sitemap.xml', 
+#        object = murders_by_year_grpd,
+#        current_date = today,
+#        )
+
+
 
 if __name__ == '__main__':
     app.run(
         host="0.0.0.0",
-        port=8003,
+        port=8007,
         use_reloader=True,
         debug=True,
     )
