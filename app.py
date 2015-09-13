@@ -9,7 +9,7 @@ from flask import render_template
 from oauth2client.client import SignedJwtAssertionCredentials
 
 app = Flask(__name__)
-json_key = json.load(open('homicides-0218b6fcdc87.json'))
+json_key = json.load(open('secretkey.json'))
 scope = ['https://spreadsheets.google.com/feeds']
 
 credentials = SignedJwtAssertionCredentials(json_key['client_email'], json_key['private_key'], scope)

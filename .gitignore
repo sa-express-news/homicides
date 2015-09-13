@@ -5,7 +5,9 @@ static/master.csv
 
 config.py
 homicides-0218b6fcdc87.json
+secretkey.json
 
+sa-express-news/master
 
 .DS_Store
 geocoder_gspread.py
