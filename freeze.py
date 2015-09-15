@@ -15,5 +15,6 @@ def detail():
         for key_a, value_a in murders_by_year_grpd[key].iteritems():
             yield { 'year': key, 'number': value_a['HomicideNbr'] }
 
+
 if __name__ == '__main__':
     freezer.freeze()

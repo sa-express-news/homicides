@@ -5,4 +5,16 @@
         <lastmod>{{ current_date }}</lastmod>
         <changefreq>monthly</changefreq>
     </url>
+    {% for key, value in object.items() %}
+    <url>
+        <loc>http://homicides.expressnews.com/{{ key }}</loc>
+        <lastmod>{{ current_date }}</lastmod>
+    </url>
+        {% for k,v in value.items() %}
+    <url>
+        <loc>http://homicides.expressnews.com/{{ key }}/{{ k }}/</loc>
+        <lastmod>{{ current_date }}</lastmod>
+    </url>
+        {% endfor %}
+    {% endfor %}
 </urlset>

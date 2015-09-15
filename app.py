@@ -6,9 +6,11 @@ import datetime
 from itertools import groupby
 from flask import Flask
 from flask import render_template
+from flask import make_response
 from oauth2client.client import SignedJwtAssertionCredentials
 
 app = Flask(__name__)
+
 json_key = json.load(open('secretkey.json'))
 scope = ['https://spreadsheets.google.com/feeds']
 
@@ -68,20 +70,22 @@ def year_index(year):
 
 @app.route('/<year>/<number>/')
 def detail(year, number):
-    return render_template('detail.html',
+    return render_template('detail-V1.html',
         object = murders_by_year_grpd[year][number],
     )
 
-#@app.route('/sitemap.xml')
-#def sitemap():
-#    today = datetime.date.today().strftime("%Y-%m-%d") 
+@app.route('/sitemap.xml')
+def sitemap():
+   today = datetime.date.today().strftime("%Y-%m-%d") 
 
-#    return render_template('sitemap.xml', 
-#        object = murders_by_year_grpd,
-#        current_date = today,
-#        )
+   sitemap_xml = render_template('sitemap.xml', object = murders_by_year_grpd, current_date = today)
+   
+   print(murders_by_year_grpd['2007'])
+   response = make_response(sitemap_xml)
 
+   response.headers["Content-Type"] = "application/xml"
 
+   return response
 
 if __name__ == '__main__':
     app.run(
