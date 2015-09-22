@@ -80,7 +80,6 @@ def sitemap():
 
    sitemap_xml = render_template('sitemap.xml', object = murders_by_year_grpd, current_date = today)
    
-   print(murders_by_year_grpd['2007'])
    response = make_response(sitemap_xml)
 
    response.headers["Content-Type"] = "application/xml"
