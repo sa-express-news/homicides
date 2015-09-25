@@ -362,6 +362,22 @@ footer {
 	height: 50px;
 	}
 
+.fb-share-button {
+	margin-left: 25px;
+}
+
+.fb-share-button-detail {
+	margin-left: 8px;
+	margin-bottom: 10px;
+
+}
+
+
+#fb-share-button-index {
+	margin-left: 60px;
+	margin-bottom: 25px;
+}
+
 .footer a {
 	color:FFFFFF; 
 	}

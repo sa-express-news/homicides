@@ -6,6 +6,15 @@
             <meta name="viewport" content="width=device-width, initial-scale=1">
         <!--title-->
         <title>Homicides in San Antonio in {{ object_list[0].app_year }}</title>
+        <!--Facebook share code-->
+            <meta property="og:url"     content="http://homicides.expressnews.com/{{ object_list[0].app_year }}/" />
+            <meta property="og:type"    content="website" />
+            <meta property="og:title"   content="Homicides in San Antonio" />
+            <meta property="og:description" content="An archive of all the homicides in San Antonio in {{ object_list[0].app_year }}." />
+            <meta property="og:image" content="https://s3.amazonaws.com/saen-images/facebook-share.jpg" />
+
+       <!--end Facebook share code-->
+
         <!--map code-->
             <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
             <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js?2"></script>
@@ -60,6 +69,19 @@
         document.write("<scr"+"ipt type=\"text/javascript\" src=\"//www.adobetag.com/d1/v2/ZDEtaGVhcnN0LTMwNzctNDQ2OC0=/amc.js\"></sc"+"ript>");
         //]]></script>
        <!-- End Hearst ATM -->
+
+        <!--fb-share root and sdk load-->
+            <div id="fb-root"></div>
+            <script>(function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s); js.id = id;
+              js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+        <!--end:fb-share root and sdk load-->
+
+
        
         <!--navigation-->
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -121,6 +143,8 @@
         	<div class="year-index-hed-container">
         		<h1>San Antonio Homicides: {{ object_list[0].app_year }} </h1>
         	</div>
+
+            <div class="fb-share-button" data-href="http://homicides.expressnews.com/{{ object_list[0].app_year }}" data-layout="button_count"></div>
         	<!--Subhead and chatter will go here with H2 or H3 styling-->
         	<table id="year-index-table" class="display">
         		<thead>    

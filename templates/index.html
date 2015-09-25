@@ -1,5 +1,13 @@
 <html lang="en">
     <head>
+        <!--Facebook share code-->
+        <meta property="og:url"     content="http://homicides.expressnews.com/" />
+        <meta property="og:type"    content="website" />
+        <meta property="og:title"   content="Homicides in San Antonio" />
+        <meta property="og:description" content="Every homicide victim has a story. They were someone's child, someone's parent. Some were bystanders: the young, the old, the hard worker who happened to be in the wrong place at the wrong time. Others were participants: criminals, gangsters, drug dealers, pimps. Some were shot out on the streets, others were killed in their homes. Every one of their deaths impacted their families, their friends and their neighborhoods." />
+        <meta property="og:image" content="https://s3.amazonaws.com/saen-images/facebook-share.jpg" />
+
+       <!--end Facebook share code-->
     	<!--meta-->
     		<meta charset="utf-8">
     		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +15,8 @@
             <meta name="google-site-verification" content="4TOq_MuTdoEImXPIlb_0vi7axAA2FUogR9I8BJPAFWA" />
     	<!--title and shit-->
     	<title>Homicides in San Antonio</title>
+
+
     	<!--map code-->
     		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
         	<script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js?2"></script>
@@ -52,6 +62,16 @@
         
     </head>
 	<body class="detail-page">
+        <!--fb-share root and sdk load-->
+            <div id="fb-root"></div>
+            <script>(function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s); js.id = id;
+              js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+        <!--end:fb-share root and sdk load-->
 
                 <!-- Hearst ATM: SA Premium 3rd Party Main -->
         <script type="text/javascript">//<![CDATA[
@@ -131,6 +151,7 @@
                 <li>Stories by: San Antonio Express-News staff reporters</li>
                 <li>Homicide data updated and maintained by: Jacob Beltran</li>
             </ul>
+            <div id="fb-share-button-index" class="fb-share-button" data-href="http://homicides.expressnews.com/" data-layout="button_count"></div>
         </div>
         <div id="splash-intro">
             <p>Every homicide victim has a story. They were someone's child, someone's parent. Some were bystanders: the young, the old, the hard worker who happened to be in the wrong place at the wrong time. Others were participants: criminals, gangsters, drug dealers, pimps. Some were shot out on the streets, others were killed in their homes. Every one of their deaths impacted their families, their friends and their neighborhoods.</p>
