@@ -8,6 +8,8 @@
         <meta property="og:image" content="https://s3.amazonaws.com/saen-images/facebook-share.jpg" />
 
        <!--end Facebook share code-->
+
+       <link rel="canonical" href="http://homicides.expressnews.com/">
     	<!--meta-->
     		<meta charset="utf-8">
     		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -51,17 +53,33 @@
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>  
     <!--end jQuery -->
 
-
-
-
-        <!--Hearst Analytics-->
-        <script type="text/javascript">(function(e){var t=e.createElement("script");if(document.cookie.indexOf("nsghtn=dev")>-1){console.log("Ensighten DEV");t.src=e.location.protocol+"//nexus.ensighten.com/hearst/news-dev/Bootstrap.js"}else{console.log("Ensighten 3rd Party");t.src=e.location.protocol+"//nexus.ensighten.com/hearst/news-3p/Bootstrap.js"}t.async=true;e.getElementsByTagName("head")[0].appendChild(t)})(document)</script>
-        <!--end Hearst Analytics--> 
-
-
+<!-- Begin Hearst analytics -->
+<script type="text/javascript" src="//nexus.ensighten.com/hearst/news-3p/Bootstrap.js"></script>
+<!-- End Hearst analytics -->
         
     </head>
 	<body class="detail-page">
+
+        <!--twitter widget js-->
+            <script>window.twttr = (function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0],
+                t = window.twttr || {};
+              if (d.getElementById(id)) return t;
+              js = d.createElement(s);
+              js.id = id;
+              js.src = "https://platform.twitter.com/widgets.js";
+              fjs.parentNode.insertBefore(js, fjs);
+             
+              t._e = [];
+              t.ready = function(f) {
+                t._e.push(f);
+              };
+             
+              return t;
+            }(document, "script", "twitter-wjs"));</script>
+        <!-- end twitter widget -->
+
+
         <!--fb-share root and sdk load-->
             <div id="fb-root"></div>
             <script>(function(d, s, id) {
@@ -73,12 +91,6 @@
             }(document, 'script', 'facebook-jssdk'));</script>
         <!--end:fb-share root and sdk load-->
 
-                <!-- Hearst ATM: SA Premium 3rd Party Main -->
-        <script type="text/javascript">//<![CDATA[
-        var amc=amc||{};if(!amc.on){amc.on=amc.call=function(){}};
-        document.write("<scr"+"ipt type=\"text/javascript\" src=\"//www.adobetag.com/d1/v2/ZDEtaGVhcnN0LTMwNzctNDQ2OC0=/amc.js\"></sc"+"ript>");
-        //]]></script>
-       <!-- End Hearst ATM -->
 
 
         <!--navigation-->
@@ -152,6 +164,9 @@
                 <li>Homicide data updated and maintained by: Jacob Beltran</li>
             </ul>
             <div id="fb-share-button-index" class="fb-share-button" data-href="http://homicides.expressnews.com/" data-layout="button_count"></div>
+
+            <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Over%20the%20past%20nine%20years,%20nearly%201,000%20people%20were%20killed%20on%20the%20streets%20of%20San%20Antonio.%20-%20San%20Antonio%20Express-News" data-counturl="http://homicides.expressnews.com/">>Tweet</a>
+
         </div>
         <div id="splash-intro">
             <p>Every homicide victim has a story. They were someone's child, someone's parent. Some were bystanders: the young, the old, the hard worker who happened to be in the wrong place at the wrong time. Others were participants: criminals, gangsters, drug dealers, pimps. Some were shot out on the streets, others were killed in their homes. Every one of their deaths impacted their families, their friends and their neighborhoods.</p>
