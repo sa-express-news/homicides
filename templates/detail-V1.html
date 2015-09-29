@@ -1,7 +1,7 @@
 <html>
 	<head>
 
-               <!--Facebook share code-->
+    <!--Facebook share code-->
             <meta property="og:url"     content="http://homicides.expressnews.com/{{ object.app_year }}/{{ object.HomicideNbr}}/" />
             <meta property="og:type"    content="website" />
             <meta property="og:title"   content="Homicides in San Antonio" />
@@ -9,6 +9,10 @@
             <meta property="og:image" content="https://s3.amazonaws.com/saen-images/facebook-share.jpg" />
 
        <!--end Facebook share code-->
+
+    <!--canonical for twitter tweet widget-->
+       <link rel="canonical" href="http://homicides.expressnews.com/{{ object.app_year }}/{{ object.HomicideNbr}}/">
+    <!-- end canonical for twitter tweet widget-->
 
 		<title>Homicides in San Antonio in: {{ object.onlineName }}</title>
 		<!--map/leaflet-->
@@ -61,6 +65,26 @@
               fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));</script>
         <!--end:fb-share root and sdk load-->
+
+
+        <!--twitter widget js-->
+            <script>window.twttr = (function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0],
+                t = window.twttr || {};
+              if (d.getElementById(id)) return t;
+              js = d.createElement(s);
+              js.id = id;
+              js.src = "https://platform.twitter.com/widgets.js";
+              fjs.parentNode.insertBefore(js, fjs);
+             
+              t._e = [];
+              t.ready = function(f) {
+                t._e.push(f);
+              };
+             
+              return t;
+            }(document, "script", "twitter-wjs"));</script>
+        <!-- end twitter widget -->
 
     <!--navigation-->
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -127,9 +151,10 @@
 
                      <div class="fb-share-button fb-share-button-detail" data-href="http://homicides.expressnews.com/{{ object.app_year }}/{{ object.HomicideNbr}}/" data-layout="button_count"></div>
 
+                        <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text={{ object.onlineName }}%20killed%20on%20{{object.IncidentDate}}%20at%20{{ object.enAddress }}.%20-%20San%20Antonio%20Express-News%20Homicide%20Archive%20-%20Read%20More:%20" data-counturl="http://homicides.expressnews.com/{{ object.app_year }}/{{ object.HomicideNbr}}/">>Tweet</a>
+
                     <div class = "story-byline">Story published: {{ object.pub_date|safe }} by staff writers for the Express-News.</div>
 				</div>
-				<!--share buttons will go here-->
 				<div class = "info-container">
 					<!--main story-->
 					<div class = "story-container">

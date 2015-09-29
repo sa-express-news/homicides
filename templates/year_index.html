@@ -15,6 +15,10 @@
 
        <!--end Facebook share code-->
 
+    <!--canonical for twitter tweet widget-->
+       <link rel="canonical" href="http://homicides.expressnews.com/{{ object_list[0].app_year }}">
+    <!-- end canonical for twitter tweet widget-->
+
         <!--map code-->
             <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
             <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js?2"></script>
@@ -63,6 +67,26 @@
 
     </head>
     <body>
+
+
+        <!--twitter widget js-->
+            <script>window.twttr = (function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0],
+                t = window.twttr || {};
+              if (d.getElementById(id)) return t;
+              js = d.createElement(s);
+              js.id = id;
+              js.src = "https://platform.twitter.com/widgets.js";
+              fjs.parentNode.insertBefore(js, fjs);
+             
+              t._e = [];
+              t.ready = function(f) {
+                t._e.push(f);
+              };
+             
+              return t;
+            }(document, "script", "twitter-wjs"));</script>
+        <!-- end twitter widget -->
 
         <!--fb-share root and sdk load-->
             <div id="fb-root"></div>
@@ -139,6 +163,8 @@
         	</div>
 
             <div class="fb-share-button" data-href="http://homicides.expressnews.com/{{ object_list[0].app_year }}" data-layout="button_count"></div>
+
+             <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Homicide%20archive%20for%20San%20Antonio:%20{{ object_list[0].app_year }}%20-%20San%20Antonio%20Express-News" data-counturl="http://homicides.expressnews.com/{{ object_list[0].app_year }}">>Tweet</a>
         	<!--Subhead and chatter will go here with H2 or H3 styling-->
         	<table id="year-index-table" class="display">
         		<thead>    
