@@ -103,15 +103,16 @@
     				<li class="dropdown">
               		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Search by year<span class="caret"></span></a>
               			<ul class="dropdown-menu" role="menu">
-                		<li id="nav-home-li"><a href="/">Home</a></li>
-                		<li><a href="/2007">2007</a></li>
-                		<li><a href="/2008">2008</a></li>
-                		<li><a href="/2009">2009</a></li>
-                		<li><a href="/2010">2010</a></li>
-                		<li><a href="/2011">2011</a></li>
-                		<li><a href="/2012">2012</a></li>
-                		<li><a href="/2013">2013</a></li>
-                		<li><a href="/2014">2014</a></li>
+                		<li id="nav-home-li"><a href="/" class="navbar-app-nav">Home</a></li>
+                		<li><a href="/2007" class="navbar-app-nav">2007</a></li>
+                		<li><a href="/2008" class="navbar-app-nav">2008</a></li>
+                		<li><a href="/2009" class="navbar-app-nav">2009</a></li>
+                		<li><a href="/2010" class="navbar-app-nav">2010</a></li>
+                		<li><a href="/2011" class="navbar-app-nav">2011</a></li>
+                		<li><a href="/2012" class="navbar-app-nav">2012</a></li>
+                		<li><a href="/2013" class="navbar-app-nav">2013</a></li>
+                		<li><a href="/2014" class="navbar-app-nav">2014</a></li>
+                    <li><a href="/2015" class="navbar-app-nav">2015</a></li>
               		</ul>
             		</li>            
                     <li>
@@ -148,20 +149,34 @@
 			<div class="info-body">
 				<div class = "headline">
 					<h1>{{ object.onlineName }}, {{ object.enAgeCalc }}</h1>
+            <div class = "story-byline">By Express-News staff
+              <p><em>Story published: {{ object.pub_date|safe }}</em>
+            </div>
+            <!--share buttons go here-->
+            <div class="fb-share-button fb-share-button-detail" data-href="http://homicides.expressnews.com/{{ object.app_year }}/{{ object.HomicideNbr}}/" data-layout="button_count"></div>
 
-                     <div class="fb-share-button fb-share-button-detail" data-href="http://homicides.expressnews.com/{{ object.app_year }}/{{ object.HomicideNbr}}/" data-layout="button_count"></div>
-
-                        <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text={{ object.onlineName }}%20killed%20on%20{{object.IncidentDate}}%20at%20{{ object.enAddress }}.%20-%20San%20Antonio%20Express-News%20Homicide%20Archive%20-%20Read%20More:%20" data-counturl="http://homicides.expressnews.com/{{ object.app_year }}/{{ object.HomicideNbr}}/">>Tweet</a>
-
-                    <div class = "story-byline">Story published: {{ object.pub_date|safe }} by staff writers for the Express-News.</div>
+            <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text={{ object.onlineName }}%20killed%20on%20{{object.IncidentDate}}%20at%20{{ object.enAddress }}.%20-%20San%20Antonio%20Express-News%20Homicide%20Archive%20-%20Read%20More:%20" data-counturl="http://homicides.expressnews.com/{{ object.app_year }}/{{ object.HomicideNbr}}/">>Tweet</a>
 				</div>
+            <div class = "factbox-container">
+              <div id= "factbox-brand"><h4 class="factbox-title">Factbox:</h4></div>
+              <ul class="factbox-info">
+                <li><strong>Date of incident:</strong>
+                <p>{{ object.IncidentDate }}</li>
+                <li><strong>Address:</strong>
+                <p>{{ object.enAddress }}</li>
+                <li><strong>Age:</strong> {{ object.enAgeCalc }}</li> 
+                <li><strong>Race:</strong> {{ object.Race }}</li>
+                <li><strong>Gender:</strong> {{ object.Gender }}</li>   
+              </ul>
+            </div>
 				<div class = "info-container">
 					<!--main story-->
 					<div class = "story-container">
 						<div class = "story"> {{ object.published_story_html|safe }}</div>
-                        <div class="data_desk_email">Information, praise, comments or concerns, please email: <a href="mailto:jkokenge@express-news.net">jkokenge@express-news.net</a></div>
-                    </div>
-					<p>
+          <div class="data_desk_email">
+            <p>Information, praise, comments or concerns, please email: <a href="mailto:jkokenge@express-news.net">jkokenge@express-news.net</a>
+          </div>
+          </div>
 				</div>
 			</div>
 			<div class="article-nav">
@@ -181,30 +196,12 @@
     						<li><a href="/2012">2012</a></li>
     						<li><a href="/2013">2013</a></li>
     						<li><a href="/2014">2014</a></li>
-    						<li><a href="/">Main Page</a></li>
+    						<li><a href="/">Homepage</a></li>
 
   						</ul>
 				</div>
 			</div>
-			<!--factbox-->
-			<div class = "factbox-container">
-				<div id= "factbox-brand"><h4 class="factbox-title">Factbox:</h4></div>
-				<ul class="factbox-info">
-					<li><strong>Date of incident:</strong>
-					<p>{{ object.IncidentDate }}</li>
-					<li><strong>Address:</strong>
-					<p>{{ object.enAddress }}</li>
-					<li><strong>Age:</strong> {{ object.enAgeCalc }}</li> 
-					<li><strong>Race:</strong> {{ object.Race }}</li>
-					<li><strong>Gender:</strong> {{ object.Gender }}</li>		
-				</ul>
-			</div>
-			</div>
-			<div style="clear: both;"></div>
-			</div>
-			</div>
-			<div style="clear: both;"></div>
-		</div>			
+	
 	<!--footer-->
     	<footer class="footer navbar-fixed-bottom">
     		<div class="container">

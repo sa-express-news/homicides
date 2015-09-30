@@ -23,6 +23,11 @@ body {
 	display: inline;
 	}
 
+.navbar-app-nav {
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	}
+
 #nav-home-li {
 	text-transform: none;
 }
@@ -230,6 +235,13 @@ table {
 	}
 
 /*story div*/
+.story-byline{
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: bold;
+	}
+
 .info-body {
 	position: relative;
 	float: left;
@@ -253,6 +265,17 @@ table {
 	width: 60%;
 	margin-bottom: 30px;
 	}
+
+.story:first-child:first-letter { 
+	float: left; 
+	font-size: 70px; 
+	line-height: 55px; 
+	padding-top: 3px; 
+	padding-right: 4px; 
+	padding-left: 2px; 
+	font-family: Georgia; 
+}
+
 
 /*factbox*/
 .factbox-container {
