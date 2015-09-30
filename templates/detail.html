@@ -103,7 +103,7 @@
     				<li class="dropdown">
               		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Search by year<span class="caret"></span></a>
               			<ul class="dropdown-menu" role="menu">
-                		<li id="nav-home-li"><a href="/">Home</a></li>
+                		<li id="nav-home-li"><a href="/" class="navbar-app-nav">Home</a></li>
                 		<li><a href="/2007" class="navbar-app-nav">2007</a></li>
                 		<li><a href="/2008" class="navbar-app-nav">2008</a></li>
                 		<li><a href="/2009" class="navbar-app-nav">2009</a></li>
@@ -154,21 +154,44 @@
             <li><a class="twitter-share-button" href="https://twitter.com/intent/tweet?text={{ object.onlineName }}%20killed%20on%20{{object.IncidentDate}}%20at%20{{ object.enAddress }}.%20-%20San%20Antonio%20Express-News%20Homicide%20Archive%20-%20Read%20More:%20" data-counturl="http://homicides.expressnews.com/{{ object.app_year }}/{{ object.HomicideNbr}}/">>Tweet</a></li>
           </ul>
         </div>
+        <!--byline-->
+
+        <div class = "story-container-new">
+            <div class = "story-byline"> 
+                <p>By Express-News staff
+            </div>
+            <div class="story-copy">
+                {{ object.published_story_html|safe }}
+                <div class = "story-byline" style="text-align:right"> 
+                    <br><em>— Originally published: {{ object.pub_date|safe }}</em>
+                </div>
+            </div>                
+        </div>
         <div class = "details-factbox-container-new">
             <div class="factbox-header-container-new">
                 <div class= "factbox-brand-new">
-                    <center><h5>Case Facts:</h5></center>
+                    <center><h6>Case Facts:</h6></center>
                 </div>
             </div>
             <ul>
                 <li><strong>Date of incident:</strong> {{ object.IncidentDate }}</li>
                 <li><strong>Location:</strong> {{ object.enAddress }}</li>
-                <li><strong>Race:</strong> {{ object.Race }}</li>
+                <li><strong>Victim's race:</strong> {{ object.Race }}</li>
+                <li><strong>Age:</strong> {{ object.enAgeCalc }}</li>
                 <li><strong>Gender:</strong> {{ object.Gender }}</li>
             </ul>
         </div>
-        <!--byline-->
-        <!--story-->
+        <!--comment-->
+        <div class = "details-factbox-container-new">
+            <div class="factbox-header-container-new">
+                <div class= "factbox-brand-new">
+                    <center><h6>Feedback:</h6></center>
+                </div>
+            </div>
+            <div class="data_desk_email">
+              <p>Information, praise, comments or concerns, please email: <a href="mailto:jkokenge@express-news.net">jkokenge@express-news.net</a>
+            </div>
+        </div>
         <!--Explore this app-->
         <!--subscribe!!!-->
     </div>

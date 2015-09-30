@@ -240,7 +240,7 @@ table {
 	font-family: Arial, sans-serif;
 	font-size: 12px;
 	text-transform: uppercase;
-	font-weight: bolder;
+	font-weight: bold;
 	}
 
 .info-body {
@@ -310,12 +310,18 @@ table {
 	margin-bottom: 30px;
 	}
 
-.story:first-child:first-letter { 
+.story-container-new {
+	width: 100%;
+	max-width: 700px;
+}
+
+.story-container-new:first-child::first-letter { 
 	float: left; 
-	font-size: 70px; 
-	line-height: 55px; 
-	padding-top: 3px; 
-	padding-right: 6px; 
+	color: #903; 
+	font-size: 75px; 
+	line-height: 60px; 
+	padding-top: 4px; 
+	padding-right: 8px; 
 	padding-left: 3px; 
 	font-family: Georgia; 
 }
@@ -324,22 +330,22 @@ table {
 .details-factbox-container-new {
 	font-family: Arial, sans-serif;
 	width: 100%;
+	margin-top:3%;
 	}
 
 .details-factbox-container-new ul {
 	list-style-type: square;
-	margin-left: 1%;
 	font-size: 14px;
 	}
 
 .factbox-header-container-new {
-	width: 105px;
+	width: 100px;
 	font-family: "Arial", sans-serif;
 	}
 
 .factbox-brand-new {
 	width: 100%;
-	min-height: 25px;
+	min-height: 20px;
 	vertical-align: middle;
 	background-color: #980000;
 	text-transform:uppercase;
@@ -347,10 +353,9 @@ table {
 	color: #FFFFFF;
 	}
 
-.factbox-brand-new h5 {
-	min-height: 25px;
-	line-height: 25px;
-	padding: 0;
+.factbox-brand-new h6 {
+	vertical-align: middle;
+	line-height: 20px;
 	}
 
 /*old factbox -- DO NOT USE*/
