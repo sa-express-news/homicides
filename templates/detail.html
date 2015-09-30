@@ -1,13 +1,27 @@
 <html>
-	<head>
-		<title>Homicides in San Antonio in: {{ object.onlineName }}</title>
-		<!--map/leaflet-->
-			<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
-            <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js?2"></script>
-            <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
-		<!--css/boostrap-->
-            <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}" />
-            <link rel="stylesheet" href="{{ url_for('static', filename='css/en-style.css') }}" />
+    <head>
+
+    <!--Facebook share code-->
+            <meta property="og:url"     content="http://homicides.expressnews.com/{{ object.app_year }}/{{ object.HomicideNbr}}/" />
+            <meta property="og:type"    content="website" />
+            <meta property="og:title"   content="Homicides in San Antonio" />
+            <meta property="og:description" content="{{ object.onlineName }} killed in {{ object.app_year }} on {{ object.IncidentDate }}." />
+            <meta property="og:image" content="https://s3.amazonaws.com/saen-images/facebook-share.jpg" />
+
+       <!--end Facebook share code-->
+
+    <!--canonical for twitter tweet widget-->
+       <link rel="canonical" href="http://homicides.expressnews.com/{{ object.app_year }}/{{ object.HomicideNbr}}/">
+    <!-- end canonical for twitter tweet widget-->
+
+        <title>Homicides in San Antonio in: {{ object.onlineName }}</title>
+        <!--map/leaflet-->
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+      <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js?2"></script>
+      <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
+        <!--css/boostrap-->
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}" />
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/en-style.css') }}" />
 
 
             
@@ -36,11 +50,43 @@
 <!-- Begin Hearst analytics -->
 <script type="text/javascript" src="//nexus.ensighten.com/hearst/news-3p/Bootstrap.js"></script>
 <!-- End Hearst analytics -->
-      
-        
-	</head>
-	<body>
-		<!--navigation-->
+
+    </head>
+    <body>
+
+
+              <!--fb-share root and sdk load-->
+            <div id="fb-root"></div>
+            <script>(function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s); js.id = id;
+              js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+        <!--end:fb-share root and sdk load-->
+
+
+        <!--twitter widget js-->
+            <script>window.twttr = (function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0],
+                t = window.twttr || {};
+              if (d.getElementById(id)) return t;
+              js = d.createElement(s);
+              js.id = id;
+              js.src = "https://platform.twitter.com/widgets.js";
+              fjs.parentNode.insertBefore(js, fjs);
+             
+              t._e = [];
+              t.ready = function(f) {
+                t._e.push(f);
+              };
+             
+              return t;
+            }(document, "script", "twitter-wjs"));</script>
+        <!-- end twitter widget -->
+
+    <!--navigation-->
 		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         	<div class="navbar-header">
           		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -57,16 +103,16 @@
     				<li class="dropdown">
               		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Search by year<span class="caret"></span></a>
               			<ul class="dropdown-menu" role="menu">
-                		<li id="nav-home-li"><a href="/">Home</a></li>
-                		<li><a href="/2007">2007</a></li>
-                		<li><a href="/2008">2008</a></li>
-                		<li><a href="/2009">2009</a></li>
-                		<li><a href="/2010">2010</a></li>
-                		<li><a href="/2011">2011</a></li>
-                		<li><a href="/2012">2012</a></li>
-                		<li><a href="/2013">2013</a></li>
-                		<li><a href="/2014">2014</a></li>
-                        <li><a href="/2015">2015</a></li>
+                		<li id="nav-home-li"><a href="/" class="navbar-app-nav">Home</a></li>
+                		<li><a href="/2007" class="navbar-app-nav">2007</a></li>
+                		<li><a href="/2008" class="navbar-app-nav">2008</a></li>
+                		<li><a href="/2009" class="navbar-app-nav">2009</a></li>
+                		<li><a href="/2010" class="navbar-app-nav">2010</a></li>
+                		<li><a href="/2011" class="navbar-app-nav">2011</a></li>
+                		<li><a href="/2012" class="navbar-app-nav">2012</a></li>
+                		<li><a href="/2013" class="navbar-app-nav">2013</a></li>
+                		<li><a href="/2014" class="navbar-app-nav">2014</a></li>
+                        <li><a href="/2015" class="navbar-app-nav">2015</a></li>
               		</ul>
             		</li>            
                     <li>
@@ -98,16 +144,58 @@
     <!--map div-->    
         <div id="map" style="width:100%; height:300px;"></div>
     <!--mainbody REDESIGN TARGET-->
-    <!--info container-->
-    	
-    	<!--headline-->
-    	<!--byline-->
-    	<!--story-->
-    
-    	<!--factbox for case-->
-    
-    	<!--Explore this app-->
-    
+    <div class="info-body">
+        <div class = "detail-headline">
+            <h1>{{ object.onlineName }}, {{ object.enAgeCalc }}</h1>
+        </div>    
+        <div class = "details-share-buttons">
+          <ul>
+            <li><div class="fb-share-button fb-share-button-detail" data-href="http://homicides.expressnews.com/{{ object.app_year }}/{{ object.HomicideNbr}}/" data-layout="button_count"></div></li>
+            <li><a class="twitter-share-button" href="https://twitter.com/intent/tweet?text={{ object.onlineName }}%20killed%20on%20{{object.IncidentDate}}%20at%20{{ object.enAddress }}.%20-%20San%20Antonio%20Express-News%20Homicide%20Archive%20-%20Read%20More:%20" data-counturl="http://homicides.expressnews.com/{{ object.app_year }}/{{ object.HomicideNbr}}/">>Tweet</a></li>
+          </ul>
+        </div>
+        <!--byline-->
+
+        <div class = "story-container-new">
+            <div class = "story-byline"> 
+                <p>By Express-News staff
+            </div>
+            <div class="story-copy">
+                {{ object.published_story_html|safe }}
+                <div class = "story-byline" style="text-align:right"> 
+                    <br><em>— Originally published: {{ object.pub_date|safe }}</em>
+                </div>
+            </div>                
+        </div>
+        <div class = "details-factbox-container-new">
+            <div class="factbox-header-container-new">
+                <div class= "factbox-brand-new">
+                    <center><h6>Case Facts:</h6></center>
+                </div>
+            </div>
+            <ul>
+                <li><strong>Date of incident:</strong> {{ object.IncidentDate }}</li>
+                <li><strong>Location:</strong> {{ object.enAddress }}</li>
+                <li><strong>Victim's race:</strong> {{ object.Race }}</li>
+                <li><strong>Age:</strong> {{ object.enAgeCalc }}</li>
+                <li><strong>Gender:</strong> {{ object.Gender }}</li>
+            </ul>
+        </div>
+        <!--comment-->
+        <div class = "details-factbox-container-new">
+            <div class="factbox-header-container-new">
+                <div class= "factbox-brand-new">
+                    <center><h6>Feedback:</h6></center>
+                </div>
+            </div>
+            <div class="data_desk_email">
+              <p>Information, praise, comments or concerns, please email: <a href="mailto:jkokenge@express-news.net">jkokenge@express-news.net</a>
+            </div>
+        </div>
+        <!--Explore this app-->
+        <!--subscribe!!!-->
+    </div>
+
     <!--footer-->
     	<footer class="footer navbar-fixed-bottom">
     		<div class="container">

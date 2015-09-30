@@ -5,6 +5,7 @@
 }
 
 body {
+	width: 100%;
 	padding-top: 50px;
 	padding-bottom: 0;
 	margin: 0;
@@ -21,6 +22,11 @@ body {
 	font-size: 11px;
 	text-transform: uppercase;
 	display: inline;
+	}
+
+.navbar-app-nav {
+	font-family: Arial, sans-serif;
+	font-size: 12px;
 	}
 
 #nav-home-li {
@@ -230,11 +236,22 @@ table {
 	}
 
 /*story div*/
+.story-byline{
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: bold;
+	}
+
 .info-body {
 	position: relative;
 	float: left;
-	width: 80%;
-	margin-left: 2%;
+	width: 85%;
+	max-width: 1000px;
+	margin-left: 7%;
+	margin-right: 7%;
+	padding-left: 2%;
+	padding-right: 2%;
 	text-align: left;
 	font-family: "Georgia", serif;
 	margin-bottom: 50px;
@@ -245,20 +262,107 @@ table {
 	}
 
 .info-container {
+	width: 85%;
+	max-width: 1000px;
+	margin-left: 7%;
+	margin-right: 7%;
+	}
+
+.detail-headline h1 {
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	width: 100%;
+}
+.details-share-buttons {
+	max-width: 227px;
+	height: 40px;
+	border-style: dotted none;
+	border-width: 1px;
+	margin-bottom:10px; 
+}
+
+.details-share-buttons ul {
+	display: block;
+	position: static;
+	margin: 0;
+	padding: 0;
+	}
+
+.details-share-buttons li {
+	list-style-type: none;
+	margin: 0;
+	padding: 10px;
+	display: inline-table;
+	}
+
+#share-tease {
+	font-family: Arial, sans-serif;
+	font-size: 11px;
+	text-transform: uppercase;
+	padding: 0px;
 	}
 
 .story-container {
 	position: relative;
 	float: left;
 	width: 60%;
+	max-width:675px;
 	margin-bottom: 30px;
 	}
 
-/*factbox*/
+.story-container-new {
+	width: 100%;
+	max-width: 700px;
+}
+
+.story-container-new:first-child::first-letter { 
+	float: left; 
+	color: #903; 
+	font-size: 75px; 
+	line-height: 60px; 
+	padding-top: 4px; 
+	padding-right: 8px; 
+	padding-left: 3px; 
+	font-family: Georgia; 
+}
+
+/*new factbox*/
+.details-factbox-container-new {
+	font-family: Arial, sans-serif;
+	width: 100%;
+	margin-top:3%;
+	}
+
+.details-factbox-container-new ul {
+	list-style-type: square;
+	font-size: 14px;
+	}
+
+.factbox-header-container-new {
+	width: 100px;
+	font-family: "Arial", sans-serif;
+	}
+
+.factbox-brand-new {
+	width: 100%;
+	min-height: 20px;
+	vertical-align: middle;
+	background-color: #980000;
+	text-transform:uppercase;
+	vertical-align: middle;
+	color: #FFFFFF;
+	}
+
+.factbox-brand-new h6 {
+	vertical-align: middle;
+	line-height: 20px;
+	}
+
+/*old factbox -- DO NOT USE*/
 .factbox-container {
 	position: relative;
 	float: right;
-	width: 160px;
+	max-width: 160px;
 	font-family: "Arial", sans-serif;
 	}
 
@@ -290,7 +394,7 @@ table {
 	list-style: none;
 	}
 
-/*byline div*/
+/*splashpage byline div*/
 .byline {
 	font-family: Georgia, Serif;
 	}
