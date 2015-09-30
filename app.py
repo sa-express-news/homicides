@@ -70,7 +70,7 @@ def year_index(year):
 
 @app.route('/<year>/<number>/')
 def detail(year, number):
-    return render_template('detail-V1.html',
+    return render_template('detail.html',
         object = murders_by_year_grpd[year][number],
     )
 

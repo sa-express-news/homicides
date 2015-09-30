@@ -149,9 +149,6 @@
 			<div class="info-body">
 				<div class = "headline">
 					<h1>{{ object.onlineName }}, {{ object.enAgeCalc }}</h1>
-            <div class = "story-byline">By Express-News staff
-              <p><em>Story published: {{ object.pub_date|safe }}</em>
-            </div>
             <!--share buttons go here-->
         <div class = "details-share-buttons">
           <ul>
@@ -160,7 +157,7 @@
           </ul>
         </div>
         <div class = "factbox-container">
-          <div id= "factbox-brand"><h4 class="factbox-title">Factbox:</h4></div>
+          <div id= "factbox-brand"><h4 class="factbox-title">Case Facts:</h4></div>
           <ul class="factbox-info">
             <li><strong>Date of incident:</strong>
             <p>{{ object.IncidentDate }}</li>
@@ -174,10 +171,13 @@
 				<div class = "info-container">
 					<!--main story-->
 					<div class = "story-container">
-						<div class = "story"> {{ object.published_story_html|safe }}</div>
-          <div class="data_desk_email">
-            <p>Information, praise, comments or concerns, please email: <a href="mailto:jkokenge@express-news.net">jkokenge@express-news.net</a>
-          </div>
+            <div class = "story-byline">By Express-News staff
+              <p><em>Story published: {{ object.pub_date|safe }}</em>
+            </div>
+						<div class = "story-copy"> {{ object.published_story_html|safe }}</div>
+            <div class="data_desk_email">
+              <p>Information, praise, comments or concerns, please email: <a href="mailto:jkokenge@express-news.net">jkokenge@express-news.net</a>
+            </div>
           </div>
 				</div>
 			</div>

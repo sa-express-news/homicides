@@ -5,6 +5,7 @@
 }
 
 body {
+	width: 100%;
 	padding-top: 50px;
 	padding-bottom: 0;
 	margin: 0;
@@ -239,14 +240,18 @@ table {
 	font-family: Arial, sans-serif;
 	font-size: 12px;
 	text-transform: uppercase;
-	font-weight: bold;
+	font-weight: bolder;
 	}
 
 .info-body {
 	position: relative;
 	float: left;
-	width: 80%;
-	margin-left: 2%;
+	width: 85%;
+	max-width: 1000px;
+	margin-left: 7%;
+	margin-right: 7%;
+	padding-left: 2%;
+	padding-right: 2%;
 	text-align: left;
 	font-family: "Georgia", serif;
 	margin-bottom: 50px;
@@ -257,10 +262,19 @@ table {
 	}
 
 .info-container {
+	width: 85%;
+	max-width: 1000px;
+	margin-left: 7%;
+	margin-right: 7%;
 	}
 
+.detail-headline h1 {
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	width: 100%;
+}
 .details-share-buttons {
-	max-width: 220px;
+	max-width: 227px;
 	height: 40px;
 	border-style: dotted none;
 	border-width: 1px;
@@ -292,6 +306,7 @@ table {
 	position: relative;
 	float: left;
 	width: 60%;
+	max-width:675px;
 	margin-bottom: 30px;
 	}
 
@@ -300,13 +315,45 @@ table {
 	font-size: 70px; 
 	line-height: 55px; 
 	padding-top: 3px; 
-	padding-right: 4px; 
-	padding-left: 2px; 
+	padding-right: 6px; 
+	padding-left: 3px; 
 	font-family: Georgia; 
 }
 
+/*new factbox*/
+.details-factbox-container-new {
+	font-family: Arial, sans-serif;
+	width: 100%;
+	}
 
-/*factbox*/
+.details-factbox-container-new ul {
+	list-style-type: square;
+	margin-left: 1%;
+	font-size: 14px;
+	}
+
+.factbox-header-container-new {
+	width: 105px;
+	font-family: "Arial", sans-serif;
+	}
+
+.factbox-brand-new {
+	width: 100%;
+	min-height: 25px;
+	vertical-align: middle;
+	background-color: #980000;
+	text-transform:uppercase;
+	vertical-align: middle;
+	color: #FFFFFF;
+	}
+
+.factbox-brand-new h5 {
+	min-height: 25px;
+	line-height: 25px;
+	padding: 0;
+	}
+
+/*old factbox -- DO NOT USE*/
 .factbox-container {
 	position: relative;
 	float: right;
@@ -342,7 +389,7 @@ table {
 	list-style: none;
 	}
 
-/*byline div*/
+/*splashpage byline div*/
 .byline {
 	font-family: Georgia, Serif;
 	}
