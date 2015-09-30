@@ -259,6 +259,35 @@ table {
 .info-container {
 	}
 
+.details-share-buttons {
+	max-width: 220px;
+	height: 40px;
+	border-style: dotted none;
+	border-width: 1px;
+	margin-bottom:10px; 
+}
+
+.details-share-buttons ul {
+	display: block;
+	position: static;
+	margin: 0;
+	padding: 0;
+	}
+
+.details-share-buttons li {
+	list-style-type: none;
+	margin: 0;
+	padding: 10px;
+	display: inline-table;
+	}
+
+#share-tease {
+	font-family: Arial, sans-serif;
+	font-size: 11px;
+	text-transform: uppercase;
+	padding: 0px;
+	}
+
 .story-container {
 	position: relative;
 	float: left;
@@ -281,7 +310,7 @@ table {
 .factbox-container {
 	position: relative;
 	float: right;
-	width: 160px;
+	max-width: 160px;
 	font-family: "Arial", sans-serif;
 	}
 

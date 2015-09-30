@@ -16,12 +16,12 @@
 
 		<title>Homicides in San Antonio in: {{ object.onlineName }}</title>
 		<!--map/leaflet-->
-			<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
-            <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js?2"></script>
-            <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
+  		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+      <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js?2"></script>
+      <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
 		<!--css/boostrap-->
-            <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}" />
-            <link rel="stylesheet" href="{{ url_for('static', filename='css/en-style.css') }}" />
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}" />
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/en-style.css') }}" />
 
 
             
@@ -153,22 +153,24 @@
               <p><em>Story published: {{ object.pub_date|safe }}</em>
             </div>
             <!--share buttons go here-->
-            <div class="fb-share-button fb-share-button-detail" data-href="http://homicides.expressnews.com/{{ object.app_year }}/{{ object.HomicideNbr}}/" data-layout="button_count"></div>
-
-            <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text={{ object.onlineName }}%20killed%20on%20{{object.IncidentDate}}%20at%20{{ object.enAddress }}.%20-%20San%20Antonio%20Express-News%20Homicide%20Archive%20-%20Read%20More:%20" data-counturl="http://homicides.expressnews.com/{{ object.app_year }}/{{ object.HomicideNbr}}/">>Tweet</a>
-				</div>
-            <div class = "factbox-container">
-              <div id= "factbox-brand"><h4 class="factbox-title">Factbox:</h4></div>
-              <ul class="factbox-info">
-                <li><strong>Date of incident:</strong>
-                <p>{{ object.IncidentDate }}</li>
-                <li><strong>Address:</strong>
-                <p>{{ object.enAddress }}</li>
-                <li><strong>Age:</strong> {{ object.enAgeCalc }}</li> 
-                <li><strong>Race:</strong> {{ object.Race }}</li>
-                <li><strong>Gender:</strong> {{ object.Gender }}</li>   
-              </ul>
-            </div>
+        <div class = "details-share-buttons">
+          <ul>
+            <li><div class="fb-share-button fb-share-button-detail" data-href="http://homicides.expressnews.com/{{ object.app_year }}/{{ object.HomicideNbr}}/" data-layout="button_count"></div></li>
+            <li><a class="twitter-share-button" href="https://twitter.com/intent/tweet?text={{ object.onlineName }}%20killed%20on%20{{object.IncidentDate}}%20at%20{{ object.enAddress }}.%20-%20San%20Antonio%20Express-News%20Homicide%20Archive%20-%20Read%20More:%20" data-counturl="http://homicides.expressnews.com/{{ object.app_year }}/{{ object.HomicideNbr}}/">>Tweet</a></li>
+          </ul>
+        </div>
+        <div class = "factbox-container">
+          <div id= "factbox-brand"><h4 class="factbox-title">Factbox:</h4></div>
+          <ul class="factbox-info">
+            <li><strong>Date of incident:</strong>
+            <p>{{ object.IncidentDate }}</li>
+            <li><strong>Address:</strong>
+            <p>{{ object.enAddress }}</li>
+            <li><strong>Age:</strong> {{ object.enAgeCalc }}</li> 
+            <li><strong>Race:</strong> {{ object.Race }}</li>
+            <li><strong>Gender:</strong> {{ object.Gender }}</li>   
+          </ul>
+        </div>
 				<div class = "info-container">
 					<!--main story-->
 					<div class = "story-container">
