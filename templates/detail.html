@@ -146,7 +146,8 @@
     <!--mainbody REDESIGN TARGET-->
     <div class="info-body">
         <div class = "detail-headline">
-            <h1>{{ object.onlineName }}, {{ object.enAgeCalc }}</h1>
+            <h1>{{ object.onlineName }}{% if object.enAgeCalc %}, 
+                {{ object.enAgeCalc }}{% endif %}</h1>
         </div>    
         <div class = "details-share-buttons">
           <ul>
@@ -155,7 +156,7 @@
           </ul>
         </div>
         <!--byline-->
-
+        {% if object.published_story_html %}
         <div class = "story-container-new">
             <div class = "story-byline"> 
                 <p style="margin-top:20px">By Express-News staff</p>
@@ -167,6 +168,7 @@
                 </div>
             </div>                
         </div>
+        {% endif %}
         <div class = "details-factbox-container-new">
             <div class="factbox-header-container-new">
                 <div class= "factbox-brand-new">
@@ -177,7 +179,9 @@
                 <li><strong>Date of incident:</strong> {{ object.IncidentDate }}</li>
                 <li><strong>Location:</strong> {{ object.enAddress }}</li>
                 <li><strong>Victim's race:</strong> {{ object.Race }}</li>
-                <li><strong>Age:</strong> {{ object.enAgeCalc }}</li>
+                {% if object.enAgeCalc %}
+                    <li><strong>Age:</strong> {{ object.enAgeCalc }}</li>
+                {% endif %}
                 <li><strong>Gender:</strong> {{ object.Gender }}</li>
             </ul>
         </div>
