@@ -146,7 +146,8 @@
     <!--mainbody REDESIGN TARGET-->
     <div class="info-body">
         <div class = "detail-headline">
-            <h1>{{ object.onlineName }}, {{ object.enAgeCalc }}</h1>
+            <h1>{{ object.onlineName }}{% if object.enAgeCalc %}, 
+                {{ object.enAgeCalc }}{% endif %}</h1>
         </div>    
         <div class = "details-share-buttons">
           <ul>
@@ -155,18 +156,19 @@
           </ul>
         </div>
         <!--byline-->
-
+        {% if object.published_story_html %}
         <div class = "story-container-new">
             <div class = "story-byline"> 
-                <p>By Express-News staff
+                <p style="margin-top:20px">By Express-News staff</p>
             </div>
             <div class="story-copy">
                 {{ object.published_story_html|safe }}
                 <div class = "story-byline" style="text-align:right"> 
-                    <br><em>— Originally published: {{ object.pub_date|safe }}</em>
+                    <em>Originally published: {{ object.pub_date|safe }}</em>
                 </div>
             </div>                
         </div>
+        {% endif %}
         <div class = "details-factbox-container-new">
             <div class="factbox-header-container-new">
                 <div class= "factbox-brand-new">
@@ -192,8 +194,19 @@
               <p>Information, praise, comments or concerns, please email: <a href="mailto:jkokenge@express-news.net">jkokenge@express-news.net</a>
             </div>
         </div>
-        <!--Explore this app-->
         <!--subscribe!!!-->
+        <div class = "details-factbox-container-new">
+            <div class="factbox-header-container-new">
+                <div class= "factbox-brand-new">
+                    <center><h6>Support Us:</h6></center>
+                </div>
+            </div>
+            <div class="data_desk_email">
+              <p style:"">In-depth, investigative journalism isn't easy or cheap. Support our work by <a href="https://myaccount.expressnews.com/dssSubscribe.aspx?z=00000&pid=126&return=http://www.expressnews.com/">subscribing to the Express-News.</a></p>
+            </div>
+        </div>
+        <!--Explore this app-->
+
     </div>
 
     <!--footer-->
