@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <!--meta-->
@@ -26,15 +27,18 @@
         <!--css/boostrap-->
             <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}" />
             <link rel="stylesheet" href="{{ url_for('static', filename='css/en-style.css') }}" />
+            <link rel="stylesheet" media="only screen and (min-width: 769px)" type="text/css" href="//cdn.datatables.net/1.10.0/css/jquery.dataTables.css">
+            <link rel="stylesheet" media="only screen and (max-width: 768px)" href="{{ url_for('static', filename='en-styles-yearindex-mobile.css') }}" />
+
         <!--datatables-->
-        	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.0/css/jquery.dataTables.css">
+        	
         	<!--use this jquery library for both bootstrap and datatables-->
         		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         	<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.0/js/jquery.dataTables.js"></script>
         	<script type="text/javascript" class="init">
         		$(document).ready( function () {
-    				$('#year-index-table ').DataTable( {
-    					paging: false
+    				$('#year-index-table').DataTable( {
+                        paging: false
     				} );
 				} );
         	</script>
@@ -166,13 +170,13 @@
 
              <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Homicide%20archive%20for%20San%20Antonio:%20{{ object_list[0].app_year }}%20-%20San%20Antonio%20Express-News" data-counturl="http://homicides.expressnews.com/{{ object_list[0].app_year }}">>Tweet</a>
         	<!--Subhead and chatter will go here with H2 or H3 styling-->
-        	<table id="year-index-table" class="display">
+        	<table id="year-index-table" class="display responsive nowrap">
         		<thead>    
             		<tr>
                 		<th>Name</th>
                 		<th>Date</th>
                 		<th>Address</th>
-                		<th>Cause of Death</th>
+                        <th>Cause</th>
                 		<th>Age</th>
                 		<th>Race/Ethnicity</th>
             		</tr>
@@ -192,25 +196,26 @@
         	</table>
         <!--footer-->
     <footer class="footer navbar-fixed-bottom">
-            <a class="footer-logo" href="http://expressnews.com"></a>
-            <div class="navbar-collapse collapse">
-            <div  class="footer-tophat">
-                <ul>
-                    <li>
-                    <a href="https://myaccount.expressnews.com/dssSubscribe.aspx?PID=248&z=00000&verifyemail=true">Subscribe</a>
-                    </li>
-                    <li id="footer-links"><a href="http://www.expressnews.com/newsroom_contacts/">Newsroom Contacts</a>
-                    </li>
-                    <li id="footer-links"><a href="http://www.expressnews.com/terms_of_use/">Terms of Use</a>
-                    </li>
-                    <li id="footer-links"><a href="http://hearstmediasanantonio.com/">Advertise</a>
-                    </li>
-                    <li>&copy; 2014
-                    </li>
-                </ul>
+        <a class="footer-logo" href="http://expressnews.com"></a>
+        <div class="navbar-collapse collapse">
+            <div class="footer-tophat">
+                    <ul>
+                        <li>
+                        <a href="https://myaccount.expressnews.com/dssSubscribe.aspx?PID=248&z=00000&verifyemail=true">Subscribe</a>
+                        </li>
+                        <li><a href="http://www.expressnews.com/newsroom_contacts/">Newsroom Contacts</a>
+                        </li>
+                        <li><a href="http://www.expressnews.com/terms_of_use/">Terms of Use</a>
+                        </li>
+                        <li><a href="http://hearstmediasanantonio.com/">Advertise</a>
+                        </li>
+                        <li>&copy; 2014
+                        </li>
+                    </ul>
             </div>
     </footer>
 	</body>
+
         <!--map code-->
         <script type="text/javascript">
             var map = L.map('map', {scrollWheelZoom: false}).setView([29.4467297, -98.5094801], 10);
@@ -240,7 +245,7 @@
 			
 			var geojsonMarkerOptions = {
     			radius: 6,
-    			fillColor: "#ff6600",
+    			fillColor: "#980000",
     			color: "#000",
     			weight: 1,
    				opacity: 1,
