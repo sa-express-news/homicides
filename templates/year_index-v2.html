@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--meta-->
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--title-->
+          <title>Homicides in San Antonio in {{ object_list[0].app_year }}</title>
+        <!--Facebook share code-->
+            <meta property="og:url"     content="http://homicides.expressnews.com/{{ object_list[0].app_year }}/" />
+            <meta property="og:type"    content="website" />
+            <meta property="og:title"   content="Homicides in San Antonio" />
+            <meta property="og:description" content="An archive of all the homicides in San Antonio in {{ object_list[0].app_year }}." />
+            <meta property="og:image" content="https://s3.amazonaws.com/saen-images/facebook-share.jpg" />
+
+       <!--end Facebook share code-->
+
+    <!--canonical for twitter tweet widget-->
+       <link rel="canonical" href="http://homicides.expressnews.com/{{ object_list[0].app_year }}">
+    <!-- end canonical for twitter tweet widget-->
+
+    <!--map code-->
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+        <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js?2"></script>
+        <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
+    <!--css/boostrap-->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/en-style.css') }}" />
+        <link rel="stylesheet" media="only screen and (min-width: 769px)" type="text/css" href="//cdn.datatables.net/1.10.0/css/jquery.dataTables.css">
+        <link rel="stylesheet" media="only screen and (max-width: 768px)" href="{{ url_for('static', filename='en-styles-yearindex-mobile.css') }}" />
+
+    <!--datatables-->
+    	
+    	<!--use this jquery library for both bootstrap and datatables-->
+    		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    	<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.0/js/jquery.dataTables.js"></script>
+    	<script type="text/javascript" class="init">
+    		$(document).ready( function () {
+				$('#year-index-table').DataTable( {
+                    paging: false
+				} );
+		} );
+</script>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->  
+
+<!--bootstrap js libs necessary for dropdown menu to function-->
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<!--end this block-->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54955008-1', 'auto');
+  ga('send', 'pageview');
+</script> 
+
+     <!-- Begin Hearst analytics -->
+<script type="text/javascript" src="//nexus.ensighten.com/hearst/news-3p/Bootstrap.js"></script>
+<!-- End Hearst analytics -->
+
+</head>
+<body>
+  <!--twitter widget js-->
+      <script>window.twttr = (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+          t = window.twttr || {};
+        if (d.getElementById(id)) return t;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+       
+        t._e = [];
+        t.ready = function(f) {
+          t._e.push(f);
+        };
+       
+        return t;
+      }(document, "script", "twitter-wjs"));</script>
+  <!-- end twitter widget -->
+
+  <!--fb-share root and sdk load-->
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+  <!--end:fb-share root and sdk load-->       
+      <!--navigation-->
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      	<div class="navbar-header">
+        		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          		<span class="sr-only">Toggle navigation</span>
+          		<span class="icon-bar"></span>
+          		<span class="icon-bar"></span>
+          		<span class="icon-bar"></span>
+        		</button>
+        		<a class="navbar-brand" href="http://expressnews.com"></a>
+      	</div>
+      	<div class="navbar-collapse collapse">
+      	<div class="nav-tophat">
+        <ul class="nav navbar-nav">
+				    <li class="dropdown">
+            		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Search by year<span class="caret"></span></a>
+            			<ul class="dropdown-menu" role="menu">
+                      <li id="nav-home-li"><a href="/" class="navbar-app-nav">Home</a></li>
+                      <li><a href="/2007" class="navbar-app-nav">2007</a></li>
+                      <li><a href="/2008" class="navbar-app-nav">2008</a></li>
+                      <li><a href="/2009" class="navbar-app-nav">2009</a></li>
+                      <li><a href="/2010" class="navbar-app-nav">2010</a></li>
+                      <li><a href="/2011" class="navbar-app-nav">2011</a></li>
+                      <li><a href="/2012" class="navbar-app-nav">2012</a></li>
+                      <li><a href="/2013" class="navbar-app-nav">2013</a></li>
+                      <li><a href="/2014" class="navbar-app-nav">2014</a></li>
+                      <li><a href="/2015" class="navbar-app-nav">2015</a></li>
+            		  </ul>
+          		</li>            
+              <li>
+                  <a href="http://www.expressnews.com/news/local/">Local</a>
+              </li>
+              <li>
+                  <a href="http://www.expressnews.com/news/us-world/">U.S. & World</a>                           
+              </li>
+              <li>
+                  <a href="http://www.expressnews.com/opinion/">Opinion</a>                          
+              </li>
+              <li>
+                  <a href="http://www.expressnews.com/business/">Business</a>                            
+              </li>
+              <li>
+                  <a href="http://www.expressnews.com/sports/">Sports</a>                            
+              </li>
+              <li>
+                  <a href="http://www.expressnews.com/entertainment/">Arts</a>                           
+              </li>
+              <li>
+              	<a href="http://www.expressnews.com/lifestyle/">Life</a>
+              </li>
+        </ul>
+      </div><!--/nav-tophat-->
+      </div><!--/.nav-collapse -->
+  </div>
+<!--end navigation block-->
+<!--map-->
+<div id="map" style="width:100%; height:350px;"></div>
+<!--body-contents-->
+<!--hed-share-div-->
+<div class="yearindex-top-container">
+  <div class = "detail-headline">
+    <h1>Homicides: {{ object_list[0].app_year }}</h1>
+  </div>
+  <div class = "yearindex-share-buttons">
+    <ul>
+      <li><div class="fb-share-button fb-share-button-detail" data-href="http://homicides.expressnews.com/{{ object_list[0].app_year }}" data-layout="button_count"></li>
+      <li style="line-height:30px"><a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Homicide%20archive%20for%20San%20Antonio:%20{{ object_list[0].app_year }}%20-%20San%20Antonio%20Express-News" data-counturl="http://homicides.expressnews.com/{{ object_list[0].app_year }}">>Tweet</a></li>
+    </ul>
+  </div>
+</div> 
+<!--table-div-->
+<div class="yearindex-table-container">
+  <table id="year-index-table" class="display responsive nowrap">
+    <thead>    
+        <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Address</th>
+                <th>Cause</th>
+            <th>Age</th>
+            <th>Race/Ethnicity</th>
+        </tr>
+      </thead>
+      <tbody>
+    {% for obj in object_list %}       
+        <tr>
+            <td><a href="{{ obj.HomicideNbr }}/">{{ obj.onlineName }}</a></td>
+            <td>{{ obj.IncidentDate }}</td>
+            <td>{{ obj.SapdADDRESS }}</td>
+            <td>{{ obj.METHOD|title }}</td>
+            <td>{{ obj.enAgeCalc }}</td>
+            <td>{{ obj.Race }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+<!--footer-->
+<footer class="footer navbar-fixed-bottom">
+  <div class="container">
+    <a class="footer-logo" href="http://expressnews.com"></a>
+    <div class="navbar-collapse collapse">
+      <div  class="footer-tophat">
+          <ul>
+            <li>
+            <a href="https://myaccount.expressnews.com/dssSubscribe.aspx?PID=248&z=00000&verifyemail=true">Subscribe</a>
+            </li>
+            <li id="footer-links"><a href="http://www.expressnews.com/newsroom_contacts/">Newsroom Contacts</a>
+            </li>
+            <li id="footer-links"><a href="http://www.expressnews.com/terms_of_use/">Terms of Use</a>
+            </li>
+            <li id="footer-links"><a href="http://hearstmediasanantonio.com/">Advertise</a>
+            </li>
+            <li>&copy; 2015
+            </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</footer> 
+<!--map code-->
+<script type="text/javascript">
+    var map = L.map('map', {scrollWheelZoom: false}).setView([29.4467297, -98.5094801], 10);
+    var layer = new L.StamenTileLayer("toner-lite");
+
+    map.addLayer(layer);
+    var data = {
+      "type": "FeatureCollection",
+      "features": [
+        {% for obj in object_list %}
+        {
+          "type": "Feature",
+          "properties": {
+            "full_name": "{{ obj.onlineName }}",
+            "id": "{{ obj.HomicideNbr }}"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [{{ obj.long }}, {{ obj.lat }}]
+          }
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ]
+    };
+
+    console.log(data);
+
+var geojsonMarkerOptions = {
+  radius: 6,
+  fillColor: "#980000",
+  color: "#000",
+  weight: 1,
+  opacity: 1,
+  fillOpacity: 0.75
+};
+
+var dataLayer = L.geoJson(data, {
+        pointToLayer: function (feature, latlng) {
+      return L.circleMarker(latlng, geojsonMarkerOptions);
+    },
+        onEachFeature: function(feature, layer) {
+            layer.bindPopup(
+                '<a href="' + feature.properties.id + '/">' +
+                    feature.properties.full_name +
+                '</a>'
+            );
+        }
+    });
+
+    console.log(dataLayer);
+    map.addLayer(dataLayer);
+</script> 
+</html>
+<!--Built with the help, both witting and unwitting, of the kind folks on The Los Angeles Times' data desk-->
