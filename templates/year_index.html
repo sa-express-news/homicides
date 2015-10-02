@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <!--meta-->
@@ -26,15 +27,18 @@
         <!--css/boostrap-->
             <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}" />
             <link rel="stylesheet" href="{{ url_for('static', filename='css/en-style.css') }}" />
+            <link rel="stylesheet" media="only screen and (min-width: 769px)" type="text/css" href="//cdn.datatables.net/1.10.0/css/jquery.dataTables.css">
+            <link rel="stylesheet" media="only screen and (max-width: 768px)" href="{{ url_for('static', filename='css/en-styles-yearindex-mobile.css') }}" />
+
         <!--datatables-->
-        	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.0/css/jquery.dataTables.css">
+        	
         	<!--use this jquery library for both bootstrap and datatables-->
         		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         	<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.0/js/jquery.dataTables.js"></script>
         	<script type="text/javascript" class="init">
         		$(document).ready( function () {
-    				$('#year-index-table ').DataTable( {
-    					paging: false
+    				$('#year-index-table').DataTable( {
+                        paging: false
     				} );
 				} );
         	</script>
@@ -118,16 +122,16 @@
 					<li class="dropdown">
               		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Search by year<span class="caret"></span></a>
               			<ul class="dropdown-menu" role="menu">
-                		<li id="nav-home-li"><a href="/">Home</a></li>
-                		<li><a href="/2007">2007</a></li>
-                		<li><a href="/2008">2008</a></li>
-                		<li><a href="/2009">2009</a></li>
-                		<li><a href="/2010">2010</a></li>
-                		<li><a href="/2011">2011</a></li>
-                		<li><a href="/2012">2012</a></li>
-                		<li><a href="/2013">2013</a></li>
-                		<li><a href="/2014">2014</a></li>
-                        <li><a href="/2015">2015</a></li>
+                        <li id="nav-home-li"><a href="/" class="navbar-app-nav">Home</a></li>
+                        <li><a href="/2007" class="navbar-app-nav">2007</a></li>
+                        <li><a href="/2008" class="navbar-app-nav">2008</a></li>
+                        <li><a href="/2009" class="navbar-app-nav">2009</a></li>
+                        <li><a href="/2010" class="navbar-app-nav">2010</a></li>
+                        <li><a href="/2011" class="navbar-app-nav">2011</a></li>
+                        <li><a href="/2012" class="navbar-app-nav">2012</a></li>
+                        <li><a href="/2013" class="navbar-app-nav">2013</a></li>
+                        <li><a href="/2014" class="navbar-app-nav">2014</a></li>
+                        <li><a href="/2015" class="navbar-app-nav">2015</a></li>
               		</ul>
             		</li>            
                     <li>
@@ -158,59 +162,69 @@
     </div>
     <!--end navigation block-->
     <div id="map" style="width:100%; height:350px;"></div>
-        	<div class="year-index-hed-container">
-        		<h1>San Antonio Homicides: {{ object_list[0].app_year }} </h1>
-        	</div>
+	<div class="year-index-container">
+        <div class="year-index-hed-container">
+    		<h1>San Antonio Homicides: {{ object_list[0].app_year }} </h1>
+    	</div>
 
-            <div class="fb-share-button" data-href="http://homicides.expressnews.com/{{ object_list[0].app_year }}" data-layout="button_count"></div>
+        <div class = "details-share-buttons">
+            <ul>
+                <li><div class="fb-share-button fb-share-button-detail" data-href="http://homicides.expressnews.com/{{ object_list[0].app_year }}" data-layout="button_count"></div></li>
+                <li><a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Homicide%20archive%20for%20San%20Antonio:%20{{ object_list[0].app_year }}%20-%20San%20Antonio%20Express-News" data-counturl="http://homicides.expressnews.com/{{ object_list[0].app_year }}">>Tweet</a></li>
+            </ul>
+        </div>
 
-             <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Homicide%20archive%20for%20San%20Antonio:%20{{ object_list[0].app_year }}%20-%20San%20Antonio%20Express-News" data-counturl="http://homicides.expressnews.com/{{ object_list[0].app_year }}">>Tweet</a>
-        	<!--Subhead and chatter will go here with H2 or H3 styling-->
-        	<table id="year-index-table" class="display">
-        		<thead>    
-            		<tr>
-                		<th>Name</th>
-                		<th>Date</th>
-                		<th>Address</th>
-                		<th>Cause of Death</th>
-                		<th>Age</th>
-                		<th>Race/Ethnicity</th>
-            		</tr>
-            	</thead>
-            	<tbody>
-        		{% for obj in object_list %}       
-            		<tr>
-                		<td><a href="{{ obj.HomicideNbr }}/">{{ obj.onlineName }}</a></td>
-                		<td>{{ obj.IncidentDate }}</td>
-                		<td>{{ obj.SapdADDRESS }}</td>
-                		<td>{{ obj.METHOD|title }}</td>
-                		<td>{{ obj.enAgeCalc }}</td>
-                		<td>{{ obj.Race }}</td>
-            		</tr>
-        		{% endfor %}
-        		</tbody>
-        	</table>
-        <!--footer-->
+
+    	<!--Subhead and chatter will go here with H2 or H3 styling-->
+        <!--table stuff goes here-->
+    	<table id="year-index-table" class="display responsive nowrap">
+    		<thead>    
+        		<tr>
+            		<th>Name</th>
+            		<th>Date</th>
+            		<th>Address</th>
+                    <th>Cause</th>
+            		<th>Age</th>
+            		<th>Race/Ethnicity</th>
+        		</tr>
+        	</thead>
+        	<tbody>
+    		{% for obj in object_list %}       
+        		<tr>
+            		<td><a href="{{ obj.HomicideNbr }}/">{{ obj.onlineName }}</a></td>
+            		<td>{{ obj.IncidentDate }}</td>
+            		<td>{{ obj.SapdADDRESS }}</td>
+            		<td>{{ obj.METHOD|title }}</td>
+            		<td>{{ obj.enAgeCalc }}</td>
+            		<td>{{ obj.Race }}</td>
+        		</tr>
+    		{% endfor %}
+    		</tbody>
+    	</table>
+    </div>
+    <!--footer-->
     <footer class="footer navbar-fixed-bottom">
-            <a class="footer-logo" href="http://expressnews.com"></a>
-            <div class="navbar-collapse collapse">
-            <div  class="footer-tophat">
-                <ul>
-                    <li>
-                    <a href="https://myaccount.expressnews.com/dssSubscribe.aspx?PID=248&z=00000&verifyemail=true">Subscribe</a>
-                    </li>
-                    <li id="footer-links"><a href="http://www.expressnews.com/newsroom_contacts/">Newsroom Contacts</a>
-                    </li>
-                    <li id="footer-links"><a href="http://www.expressnews.com/terms_of_use/">Terms of Use</a>
-                    </li>
-                    <li id="footer-links"><a href="http://hearstmediasanantonio.com/">Advertise</a>
-                    </li>
-                    <li>&copy; 2014
-                    </li>
-                </ul>
+        <a class="footer-logo" href="http://expressnews.com"></a>
+        <div class="navbar-collapse collapse">
+            <div class="footer-tophat">
+                    <ul>
+                        <li>
+                        <a href="https://myaccount.expressnews.com/dssSubscribe.aspx?PID=248&z=00000&verifyemail=true">Subscribe</a>
+                        </li>
+                        <li><a href="http://www.expressnews.com/newsroom_contacts/">Newsroom Contacts</a>
+                        </li>
+                        <li><a href="http://www.expressnews.com/terms_of_use/">Terms of Use</a>
+                        </li>
+                        <li><a href="http://hearstmediasanantonio.com/">Advertise</a>
+                        </li>
+                        <li>&copy; 2014
+                        </li>
+                    </ul>
             </div>
+        </div>
     </footer>
-	</body>
+</body>
+
         <!--map code-->
         <script type="text/javascript">
             var map = L.map('map', {scrollWheelZoom: false}).setView([29.4467297, -98.5094801], 10);
@@ -240,11 +254,11 @@
 			
 			var geojsonMarkerOptions = {
     			radius: 6,
-    			fillColor: "#ff6600",
+    			fillColor: "#980000",
     			color: "#000",
     			weight: 1,
    				opacity: 1,
-    			fillOpacity: 0.8
+    			fillOpacity: 0.75
 			};
 			
 			var dataLayer = L.geoJson(data, {
@@ -262,7 +276,6 @@
 
             console.log(dataLayer);
             map.addLayer(dataLayer);
-        </script>
-        <!--Built with the help, both witting and unwitting, of the kind folks on The Los Angeles Times' data desk-->
-    </body>
+        </script> 
 </html>
+<!--Built with the help, both witting and unwitting, of the kind folks on The Los Angeles Times' data desk-->

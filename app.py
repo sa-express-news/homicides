@@ -63,7 +63,7 @@ def year_index(year):
         murder_list.append(value)
         murder_list  
 
-    return render_template('year_index.html', 
+    return render_template('year_index-v2.html', 
         object_list = murder_list,
         )
 

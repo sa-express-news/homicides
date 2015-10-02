@@ -198,9 +198,23 @@ nav {
 }
 	
 /*yearindex page*/
+.yearindex-top-container {
+	width: 95%;
+	margin-top: 2%;
+	padding-left: 5%;
+	padding-right: 4.5%;
+	margin-bottom: 25px;
+}
+
 .year-index-hed-container {
-	padding-left: 1%;
-	padding-right: 1%;
+	margin-left: 1%;
+	margin-right: 1%;
+}
+
+.detail-headline h1 {
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	width: 95%;
 }
 
 #year-index-table_wrapper {
@@ -209,9 +223,56 @@ nav {
 	padding-right: 1%;
 }
 
-table {
-	font-size: 12px;
+.yearindex-share-buttons {
+	max-width: 227px;
+	height: 40px;
+	border-style: dotted none;
+	border-width: 1px;
+	padding-bottom: 10px;
+	margin-bottom:20px;
+	vertical-align: middle;
+}
+
+.yearindex-share-buttons ul {
+	display: block;
+	vertical-align: middle;
+	position: static;
+	margin: 0;
+	padding: 0;
 	}
+
+.yearindex-share-buttons li {
+	list-style-type: none;
+	margin: 0;
+	padding: 10px;
+	display: inline-table;
+	vertical-align: middle;
+}
+
+.yearindex-table-container {
+	margin-left: 4%;
+	margin-right: 4.5%;
+	padding-bottom: 30px;
+}
+
+table {
+	font-size: 13px;
+	width: 100%;
+	}
+
+table tr {
+	padding: 1%;
+	line-height: 25px;
+}
+
+table td::before {
+	line-height: 13px;
+	font-weight: bold;
+	width: 35%;
+
+}
+
+
 
 /*detail page*/
 	
@@ -330,7 +391,7 @@ table {
 .details-factbox-container-new {
 	font-family: Arial, sans-serif;
 	width: 100%;
-	margin-top:4%;
+	margin-top:30px;
 	}
 
 .details-factbox-container-new ul {
@@ -443,7 +504,7 @@ footer {
 .footer-tophat {
 	display: table-cell;
 	float: left;
-	width: 85%;
+	width: 90%;
 	color: #FFFFFF;
 	font-family: Arial, sans-serif;
 	font-size: 11px;
@@ -476,12 +537,12 @@ footer {
 
 }
 
-
 #fb-share-button-index {
 	margin-left: 60px;
 	margin-bottom: 25px;
 }
 
-.footer a {
-	color:FFFFFF; 
-	}
+.footer-tophat ul, .footer-tophat li, .footer-tophat a {
+	color: #FFFFFF;
+} 
+

@@ -163,9 +163,9 @@
             </div>
             <div class="story-copy">
                 {{ object.published_story_html|safe }}
-                <div class = "story-byline" style="text-align:right"> 
-                    <em>Originally published: {{ object.pub_date|safe }}</em>
-                </div>
+                {% if object.pub_date%}
+                    <div class = "story-byline" style="text-align:right"> <em>Originally published: {{ object.pub_date|safe }}</em></div>
+                {% endif %}
             </div>                
         </div>
         {% endif %}
