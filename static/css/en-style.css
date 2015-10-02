@@ -252,12 +252,25 @@ nav {
 .yearindex-table-container {
 	margin-left: 4%;
 	margin-right: 4.5%;
+	padding-bottom: 30px;
 }
 
 table {
-	font-size: 12px;
+	font-size: 13px;
 	width: 100%;
 	}
+
+table tr {
+	padding: 1%;
+	line-height: 25px;
+}
+
+table td::before {
+	line-height: 13px;
+	font-weight: bold;
+	width: 35%;
+
+}
 
 
 
@@ -378,7 +391,7 @@ table {
 .details-factbox-container-new {
 	font-family: Arial, sans-serif;
 	width: 100%;
-	margin-top:4%;
+	margin-top:30px;
 	}
 
 .details-factbox-container-new ul {
