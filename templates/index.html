@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <!--Facebook share code-->
@@ -98,165 +99,170 @@
 
 
 
-        <!--navigation-->
-        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        	<div class="navbar-header">
-          		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            		<span class="sr-only">Toggle navigation</span>
-            		<span class="icon-bar"></span>
-            		<span class="icon-bar"></span>
-            		<span class="icon-bar"></span>
-          		</button>
-          		<a class="navbar-brand" href="http://expressnews.com"></a>
-        	</div>
-        	<div class="navbar-collapse collapse">
-        	<div class="nav-tophat">
-          		<ul class="nav navbar-nav">
-					<li class="dropdown">
-              		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Search by year<span class="caret"></span></a>
-              			<ul class="dropdown-menu" role="menu">
-                		<li id="nav-home-li"><a href="/">Home</a></li>
-                		<li><a href="/2007">2007</a></li>
-                		<li><a href="/2008">2008</a></li>
-                		<li><a href="/2009">2009</a></li>
-                		<li><a href="/2010">2010</a></li>
-                		<li><a href="/2011">2011</a></li>
-                		<li><a href="/2012">2012</a></li>
-                		<li><a href="/2013">2013</a></li>
-                		<li><a href="/2014">2014</a></li>
-                        <li><a href="/2015">2015</a></li>
-              		</ul>
-            		</li>            
-                    <li>
-                        <a href="http://www.expressnews.com/news/local/">Local</a>
-                    </li>
-                    <li>
-                        <a href="http://www.expressnews.com/news/us-world/">U.S. & World</a>                           
-                    </li>
-                    <li>
-                        <a href="http://www.expressnews.com/opinion/">Opinion</a>                          
-                    </li>
-                    <li>
-                        <a href="http://www.expressnews.com/business/">Business</a>                            
-                    </li>
-                    <li>
-                        <a href="http://www.expressnews.com/sports/">Sports</a>                            
-                    </li>
-                    <li>
-                        <a href="http://www.expressnews.com/entertainment/">Arts</a>                           
-                    </li>
-                    <li>
-                    	<a href="http://www.expressnews.com/lifestyle/">Life</a>
-                    </li>
-
+    <!--navigation-->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    	<div class="navbar-header">
+      		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        		<span class="sr-only">Toggle navigation</span>
+        		<span class="icon-bar"></span>
+        		<span class="icon-bar"></span>
+        		<span class="icon-bar"></span>
+      		</button>
+      		<a class="navbar-brand" href="http://expressnews.com"></a>
+    	</div>
+    	<div class="navbar-collapse collapse">
+    	<div class="nav-tophat">
+      		<ul class="nav navbar-nav">
+				<li class="dropdown">
+          		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Search by year<span class="caret"></span></a>
+          			<ul class="dropdown-menu" role="menu">
+            		<li id="nav-home-li"><a href="/">Home</a></li>
+            		<li><a href="/2007">2007</a></li>
+            		<li><a href="/2008">2008</a></li>
+            		<li><a href="/2009">2009</a></li>
+            		<li><a href="/2010">2010</a></li>
+            		<li><a href="/2011">2011</a></li>
+            		<li><a href="/2012">2012</a></li>
+            		<li><a href="/2013">2013</a></li>
+            		<li><a href="/2014">2014</a></li>
+                    <li><a href="/2015">2015</a></li>
           		</ul>
-        </div><!--/nav-tophat-->
-        </div><!--/.nav-collapse -->
-    </div>
-    <!--end navigation block-->
-    <!--splash image goes here-->
-    <div class="splash-container">
-        <img id="splash-image" src="{{ url_for('static', filename = 'images/splashmain-use.jpg') }}" alt="This is a photo from a SAPD crime scene, where police were investigating a suspected homicide in 2012" />
-        <p id="splash-hed">Homicide:</p>
-    </div>
-		<!--Subhead and chatter will go here with H2 or H3 styling-->  
-    	<h1 id="splash-dek"> Over the past nine years, nearly 1,000 people were killed on the streets of San Antonio. </h1>
+        		</li>            
+                <li>
+                    <a href="http://www.expressnews.com/news/local/">Local</a>
+                </li>
+                <li>
+                    <a href="http://www.expressnews.com/news/us-world/">U.S. & World</a>                           
+                </li>
+                <li>
+                    <a href="http://www.expressnews.com/opinion/">Opinion</a>                          
+                </li>
+                <li>
+                    <a href="http://www.expressnews.com/business/">Business</a>                            
+                </li>
+                <li>
+                    <a href="http://www.expressnews.com/sports/">Sports</a>                            
+                </li>
+                <li>
+                    <a href="http://www.expressnews.com/entertainment/">Arts</a>                           
+                </li>
+                <li>
+                	<a href="http://www.expressnews.com/lifestyle/">Life</a>
+                </li>
+
+      		</ul>
+    </div><!--/nav-tophat-->
+    </div><!--/.nav-collapse -->
+</div>
+<!--end navigation block-->
+<!--splash image goes here-->
+<div class="splash-container">
+    <img id="splash-image" src="{{ url_for('static', filename = 'images/splashmain-use.jpg') }}" alt="This is a photo from a SAPD crime scene, where police were investigating a suspected homicide in 2012" />
+    <p id="splash-hed">Homicide:</p>
+</div>
+	<!--Subhead and chatter will go here with H2 or H3 styling-->  
+	<div class="splash-info-body">
+        <h2 id="splash-dek"> Over the past nine years, nearly 1,000 people were killed on the streets of San Antonio. </h2>
+        <div class = "splash-share-buttons">
+            <ul>
+                <li><div id="fb-share-button-index" class="fb-share-button" data-href="http://homicides.expressnews.com/" data-layout="button_count"></div></li>
+                <li><a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Over%20the%20past%20nine%20years,%20nearly%201,000%20people%20were%20killed%20on%20the%20streets%20of%20San%20Antonio.%20-%20Homicide%20Archive%20Express-News" data-counturl="http://homicides.expressnews.com/">>Tweet</a></li>
+            </ul>
+        </div>
+        <div class="clear"></div>
         <div class="byline">
             <ul>
                 <li>Written by: Nolan Hicks</li>
                 <li>Developed by: Nolan Hicks and Joseph Kokenge</li>
+                <li>Updated by: Jacob Beltran</li>
                 <li>Stories by: San Antonio Express-News staff reporters</li>
-                <li>Homicide data updated and maintained by: Jacob Beltran</li>
             </ul>
-            <div id="fb-share-button-index" class="fb-share-button" data-href="http://homicides.expressnews.com/" data-layout="button_count"></div>
-
-            <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Over%20the%20past%20nine%20years,%20nearly%201,000%20people%20were%20killed%20on%20the%20streets%20of%20San%20Antonio.%20-%20Homicide%20Archive%20Express-News" data-counturl="http://homicides.expressnews.com/">>Tweet</a>
-
         </div>
         <div id="splash-intro">
             <p>Every homicide victim has a story. They were someone's child, someone's parent. Some were bystanders: the young, the old, the hard worker who happened to be in the wrong place at the wrong time. Others were participants: criminals, gangsters, drug dealers, pimps. Some were shot out on the streets, others were killed in their homes. Every one of their deaths impacted their families, their friends and their neighborhoods.</p>
             <p>From January 2007 to January 2015, reporters at the Express-News have tracked every homicide in the city and published hundreds of stories about incidents. This ongoing project aims to combine those records and stories, transforming them into a standing community resource that provides a record of those lost and demonstrates the cumulative impact of violence.</p>
-    </div>
-    	<!--year-by-year search goes here-->
-    	<div class="section-hed"><h2>Search by year:</h2></div>
-    	<div class="year-container">
-    		<div class="year-wrapper">
-    			<a href="/2007" class="year-box">
-    				<p class="year">In 2007, there were</p> 
-    				<p class="homicidenumber">126</p>
-    				<p class="homicide-chatter">homicides</p>
-    			</a>
-    			<a href="/2008" class="year-box">
-    				<p class="year">In 2008, there were</p> 
-    				<p class="homicidenumber">136</p>
-    				<p class="homicide-chatter">homicides</p>
-    			</a>
-    			<a href="/2009" class="year-box">
-    				<p class="year">In 2009, there were</p> 
-    				<p class="homicidenumber">114</p>
-    				<p class="homicide-chatter">homicides</p>
-
-    			</a>
-    			<a href="/2010" class="year-box">
-    				<p class="year">In 2010, there were</p> 
-    				<p class="homicidenumber">99</p>
-    				<p class="homicide-chatter">homicides</p>
-    			</a>
-    			<a href="/2011" class="year-box">
-    				<p class="year">In 2011, there were</p> 
-    				<p class="homicidenumber">97</p>
-    				<p class="homicide-chatter">homicides</p>
-    			</a>
-    			<a href="/2012" class="year-box">
-    				<p class="year">In 2012, there were</p> 
-    				<p class="homicidenumber">108</p>
-    				<p class="homicide-chatter">homicides</p>
-    			</a>
-    			<a href="/2013" class="year-box">
-    				<p class="year">In 2013, there were</p> 
-    				<p class="homicidenumber">100</p>
-    				<p class="homicide-chatter">homicides</p>
-    			</a>
-    			<a href="/2014" class="year-box">
-    				<p class="year">In 2014, there were</p> 
-    				<p class="homicidenumber">125</p>
-    				<p class="homicide-chatter">homicides</p>
-    			</a>
-                <a href="/2015" class="year-box">
-                    <p class="year">In 2015, there were</p>
-                    <p class="homicidenumber">80*</p>
-                    <p class="homicide-chatter">homicides</p>
-                </a>
-    		</div>
-    	</div>
-        <div class="clear"></div>
-        <div class="data_desk_email">
-            <p><sup>*</sup>Numbers for 2015 are through September 6.</p>
-            <p>Information, praise, comments or concerns, please email: <a href="mailto:jkokenge@express-news.net">jkokenge@express-news.net</a></p>
-        </div> 
-
-    </div><!--closes container-->
-    <footer class="footer">
-        <a class="footer-logo" href="http://expressnews.com"></a>
-        <div class="navbar-collapse collapse">
-            <div  class="footer-tophat">
-                <ul>
-                    <li>
-                    <a href="https://myaccount.expressnews.com/dssSubscribe.aspx?PID=248&z=00000&verifyemail=true">Subscribe</a>
-                    </li>
-                    <li id="footer-links"><a href="http://www.expressnews.com/newsroom_contacts/">Newsroom Contacts</a>
-                    </li>
-                    <li id="footer-links"><a href="http://www.expressnews.com/terms_of_use/">Terms of Use</a>
-                    </li>
-                    <li id="footer-links"><a href="http://hearstmediasanantonio.com/">Advertise</a>
-                    </li>
-                    <li>&copy; 2014
-                    </li>
-                </ul>
-            </div>
         </div>
-    </footer>
-  	
-		<!--Based on the First News App bootcamp at NICAR14. Built with the help, both witting and unwitting, of the kind folks on The Los Angeles Times' Data Desk and Chicago Tribune's News Apps team-->
-    </body>
+</div>
+	<!--year-by-year search goes here-->
+	<div class="section-hed"><h2>Search by year:</h2></div>
+	<div class="year-container">
+		<div class="year-wrapper">
+			<a href="/2007" class="year-box">
+				<p class="year">In 2007, there were</p> 
+				<p class="homicidenumber">126</p>
+				<p class="homicide-chatter">homicides</p>
+			</a>
+			<a href="/2008" class="year-box">
+				<p class="year">In 2008, there were</p> 
+				<p class="homicidenumber">136</p>
+				<p class="homicide-chatter">homicides</p>
+			</a>
+			<a href="/2009" class="year-box">
+				<p class="year">In 2009, there were</p> 
+				<p class="homicidenumber">114</p>
+				<p class="homicide-chatter">homicides</p>
+
+			</a>
+			<a href="/2010" class="year-box">
+				<p class="year">In 2010, there were</p> 
+				<p class="homicidenumber">99</p>
+				<p class="homicide-chatter">homicides</p>
+			</a>
+			<a href="/2011" class="year-box">
+				<p class="year">In 2011, there were</p> 
+				<p class="homicidenumber">97</p>
+				<p class="homicide-chatter">homicides</p>
+			</a>
+			<a href="/2012" class="year-box">
+				<p class="year">In 2012, there were</p> 
+				<p class="homicidenumber">108</p>
+				<p class="homicide-chatter">homicides</p>
+			</a>
+			<a href="/2013" class="year-box">
+				<p class="year">In 2013, there were</p> 
+				<p class="homicidenumber">100</p>
+				<p class="homicide-chatter">homicides</p>
+			</a>
+			<a href="/2014" class="year-box">
+				<p class="year">In 2014, there were</p> 
+				<p class="homicidenumber">125</p>
+				<p class="homicide-chatter">homicides</p>
+			</a>
+            <a href="/2015" class="year-box">
+                <p class="year">In 2015, there were</p>
+                <p class="homicidenumber">80*</p>
+                <p class="homicide-chatter">homicides</p>
+            </a>
+		</div>
+	</div>
+    <div class="clear"></div>
+    <div class="data_desk_email">
+        <p><sup>*</sup>Numbers for 2015 are through September 6.</p>
+        <p>Information, praise, comments or concerns, please email: <a href="mailto:jkokenge@express-news.net">jkokenge@express-news.net</a></p>
+    </div> 
+
+</div><!--closes container-->
+<footer class="footer">
+    <a class="footer-logo" href="http://expressnews.com"></a>
+    <div class="navbar-collapse collapse">
+        <div  class="footer-tophat">
+            <ul>
+                <li>
+                <a href="https://myaccount.expressnews.com/dssSubscribe.aspx?PID=248&z=00000&verifyemail=true">Subscribe</a>
+                </li>
+                <li id="footer-links"><a href="http://www.expressnews.com/newsroom_contacts/">Newsroom Contacts</a>
+                </li>
+                <li id="footer-links"><a href="http://www.expressnews.com/terms_of_use/">Terms of Use</a>
+                </li>
+                <li id="footer-links"><a href="http://hearstmediasanantonio.com/">Advertise</a>
+                </li>
+                <li>&copy; 2014
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
+	
+	<!--Based on the First News App bootcamp at NICAR14. Built with the help, both witting and unwitting, of the kind folks on The Los Angeles Times' Data Desk and Chicago Tribune's News Apps team-->
+</body>
 </html>
