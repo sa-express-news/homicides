@@ -99,29 +99,63 @@ nav {
 	position: absolute;
 	color: #FFFFFF;
 	font-family: Arial, sans-serif;
-	font-size: 72px;
+	font-size: 400%;
 	font-weight: bold;
 	text-transform: uppercase;
 	margin-left:2.5%;
 	bottom:-15px;
 	}
 
+.splash-info-body {
+	position: relative;
+	width: 92%;
+	max-width: 1000px;
+	margin-left: 3.5%;
+	margin-right: 3.5%;
+	text-align: left;
+	font-family: "Georgia", serif;
+	margin-bottom: 25px;
+	}
+
 #splash-dek {
-	margin-left:2.5%;
-	margin-right: 2.5%;
 	margin-top: 15px;
 	font-family: Georgia, Serif;
 	}
 
 #splash-intro {
-	margin-left: 2.5%;
-	margin-right: 2.5%;
 	font-family: Georgia, Serif;
-	font-size: 125%;
+	font-size: 115%;
+	margin-bottom: 1.5%;
 	}
 
+.splash-share-buttons {
+	max-width: 227px;
+	height: 40px;
+	border-style: dotted none;
+	border-width: 1px;
+	margin-bottom: 15px;
+}
+
+.splash-share-buttons ul {
+	display: block;
+	position: static;
+	margin: 0;
+	padding: 0;
+	/*vertical-align: middle;*/ 
+
+	}
+
+.splash-share-buttons li {
+	list-style-type: none;
+	margin: 0;
+	padding: 10px;
+	display: inline-table;
+	/*vertical-align: middle;*/
+}
+
+
 .section-hed {
-	margin-left: 2.5%;
+	margin-left: 0px;
 	}
 
 .container{
@@ -132,8 +166,8 @@ nav {
 	width: 100%;
 	padding-top: 1%;
 	padding-bottom: 1%;
-	padding-left: 2.5%;
-	padding-right: 2.5%;
+	padding-left: 0px;
+	padding-right: 0px;
 	text-align: center;
 	}
 	
@@ -149,8 +183,8 @@ nav {
 .year-box {
 	display: block;
 	float: left;
-	width: 300px;
-	height: 275px;
+	width: 285px;
+	height: 261px;
 	border-style: solid;
 	border-width: 1px;
 	border-radius: 10px;
@@ -170,21 +204,25 @@ nav {
 
 
 .year {
-	font-size: 48px;
+	font-size: 47px;
 	line-height: 90%;
 }
 
 .homicidenumber {
 	padding-left: 0;
 	margin-left: 0;
-	font-size: 130px;
-	line-height: 60%;
-	color: #B00000;
+	font-family: Arial, sans-serif;
+	font-style: italic;
+	font-weight: bold;
+	font-size: 125px;
+	line-height: 75%;
+
+	color: #980000;
 }
 
 .homicide-chatter {
-	font-size: 48px;
-	line-height: 100px;
+	font-size: 47px;
+	line-height: 50px;
 }
 
 #main-asterisk {
@@ -268,8 +306,6 @@ table tr {
 table td::before {
 	line-height: 13px;
 	font-weight: bold;
-	width: 35%;
-
 }
 
 
@@ -526,7 +562,7 @@ footer {
 	vertical-align: middle;
 	height: 50px;
 	}
-
+/*
 .fb-share-button {
 	margin-left: 25px;
 }
@@ -541,7 +577,7 @@ footer {
 	margin-left: 60px;
 	margin-bottom: 25px;
 }
-
+*/
 .footer-tophat ul, .footer-tophat li, .footer-tophat a {
 	color: #FFFFFF;
 } 

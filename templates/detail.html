@@ -149,7 +149,7 @@
             <h1>{{ object.onlineName }}{% if object.enAgeCalc %}, 
                 {{ object.enAgeCalc }}{% endif %}</h1>
         </div>    
-        <div class = "details-share-buttons">
+        <div class = "splash-share-buttons">
           <ul>
             <li><div class="fb-share-button fb-share-button-detail" data-href="http://homicides.expressnews.com/{{ object.app_year }}/{{ object.HomicideNbr}}/" data-layout="button_count"></div></li>
             <li><a class="twitter-share-button" href="https://twitter.com/intent/tweet?text={{ object.onlineName }}%20killed%20on%20{{object.IncidentDate}}%20at%20{{ object.enAddress }}.%20-%20San%20Antonio%20Express-News%20Homicide%20Archive%20-%20Read%20More:%20" data-counturl="http://homicides.expressnews.com/{{ object.app_year }}/{{ object.HomicideNbr}}/">>Tweet</a></li>
