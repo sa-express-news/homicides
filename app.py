@@ -14,24 +14,24 @@ app = Flask(__name__)
 json_key = json.load(open('secretkey.json'))
 scope = ['https://spreadsheets.google.com/feeds']
 
-#credentials = SignedJwtAssertionCredentials(json_key['client_email'], json_key['private_key'], scope)
+credentials = SignedJwtAssertionCredentials(json_key['client_email'], json_key['private_key'], scope)
 
-#gc = gspread.authorize(credentials)
+gc = gspread.authorize(credentials)
 
-#output_csv = open("./static/master.csv","wb")
-#output = csv.writer(output_csv, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+output_csv = open("./static/master.csv","wb")
+output = csv.writer(output_csv, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
 
-#all_sheets = gc.open("CrimeTeamHomicideFinalDatabase_working")
+all_sheets = gc.open("CrimeTeamHomicideFinalDatabase_working")
 
-#sheet = all_sheets.worksheet("master")
+sheet = all_sheets.worksheet("master")
 
-#raw_sheet = sheet.get_all_values()
+raw_sheet = sheet.get_all_values()
 
-#for row in raw_sheet:
-    #new_row = list(map((lambda x: x.encode('ascii', 'ignore').replace('\n', ' ').replace('\r', '')), row))
-    #output.writerow(new_row)
+for row in raw_sheet:
+    new_row = list(map((lambda x: x.encode('ascii', 'ignore').replace('\n', ' ').replace('\r', '')), row))
+    output.writerow(new_row)
 
-#output_csv.close()
+output_csv.close()
 
 csv_path = './static/master.csv'
 
