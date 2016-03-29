@@ -79,7 +79,7 @@ def sitemap():
    today = datetime.date.today().strftime("%Y-%m-%d") 
 
    sitemap_xml = render_template('sitemap.xml', object = murders_by_year_grpd, current_date = today)
-   
+
    response = make_response(sitemap_xml)
 
    response.headers["Content-Type"] = "application/xml"
@@ -89,7 +89,7 @@ def sitemap():
 if __name__ == '__main__':
     app.run(
         host="0.0.0.0",
-        port=8007,
+        port=8008,
         use_reloader=True,
         debug=True,
     )
